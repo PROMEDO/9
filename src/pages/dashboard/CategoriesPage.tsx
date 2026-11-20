@@ -28,6 +28,7 @@ import {
   themedInputStyle,
   useDashboard,
 } from './DashboardContext';
+import { dashModalMotion, dashSectionMotion } from '../../utils/dashboardMotion';
 
 export const CategoriesPage: React.FC = () => {
   const prefersReducedMotion = useReducedMotion();
@@ -191,9 +192,7 @@ export const CategoriesPage: React.FC = () => {
     <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
       <motion.div
         className="mp-items-toolbar"
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0)}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
           <button
@@ -239,9 +238,7 @@ export const CategoriesPage: React.FC = () => {
 
       <motion.div
         className="mp-items-list"
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: prefersReducedMotion ? 0 : 0.08, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0.12)}
       >
         {displayCategories.map((c) => {
           const isCatVisible = c.published !== false;
@@ -390,9 +387,7 @@ export const CategoriesPage: React.FC = () => {
               aria-modal="true"
               aria-label={editingCatId ? 'تعديل القسم' : 'إضافة قسم'}
               onClick={(e) => e.stopPropagation()}
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96, y: 8 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              {...dashModalMotion(prefersReducedMotion)}
               style={{
                 width: 'min(500px, 100%)',
                 maxHeight: 'calc(100dvh - 32px)',
@@ -594,9 +589,7 @@ export const CategoriesPage: React.FC = () => {
               aria-modal="true"
               aria-label={`توقيت توفر: ${scheduleModalCat.n}`}
               onClick={(e) => e.stopPropagation()}
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96, y: 8 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              {...dashModalMotion(prefersReducedMotion)}
               style={{
                 width: 'min(480px, 100%)',
                 maxHeight: 'calc(100dvh - 32px)',

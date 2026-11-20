@@ -30,6 +30,12 @@ import {
 import { Order } from '../../types';
 import { formatNumber } from '../../utils/storage';
 import { surfaceCardStyle, useDashboard } from './DashboardContext';
+import {
+  DASH_EASE,
+  dashCardMotion,
+  dashSectionMotion,
+  dashSubTabMotion,
+} from '../../utils/dashboardMotion';
 
 type StatsPeriod = 'day' | 'week' | 'month' | 'all';
 type ChartMetric = 'orders' | 'sales';
@@ -741,9 +747,7 @@ export const StatsPage: React.FC = () => {
           {/* 1. Ultra-Simple Date & Period Controller */}
           <motion.div
             className="mp-stats-filter-card"
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.04, ease: [0.16, 1, 0.3, 1] }}
+            {...dashSectionMotion(prefersReducedMotion, 0.04)}
           >
             <div className="mp-stats-seg-track" role="tablist" aria-label="الفترة الزمنية">
               {[
@@ -918,10 +922,7 @@ export const StatsPage: React.FC = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={`${period}-${selectedDay}-${weekOffset}-${selectedMonth}-${allScope}`}
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={prefersReducedMotion ? undefined : { opacity: 0, y: -4 }}
-              transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+              {...dashSubTabMotion(prefersReducedMotion)}
               style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}
             >
               {/* 2. Hero Sales Card */}
@@ -974,9 +975,7 @@ export const StatsPage: React.FC = () => {
               <div className="mp-stats-kpi-grid">
                 <motion.div
                   className="mp-stats-kpi-tile"
-                  initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: 0.03 }}
+                  {...dashCardMotion(prefersReducedMotion, 0, 1, false, 0.05)}
                 >
                   <div className="mp-stats-kpi-top">
                     <span className="mp-stats-kpi-label">الطلبات</span>
@@ -992,9 +991,7 @@ export const StatsPage: React.FC = () => {
 
                 <motion.div
                   className="mp-stats-kpi-tile"
-                  initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: 0.08 }}
+                  {...dashCardMotion(prefersReducedMotion, 1, 1, false, 0.05)}
                 >
                   <div className="mp-stats-kpi-top">
                     <span className="mp-stats-kpi-label">متوسط الطلب</span>
@@ -1011,9 +1008,7 @@ export const StatsPage: React.FC = () => {
 
                 <motion.div
                   className="mp-stats-kpi-tile"
-                  initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: 0.13 }}
+                  {...dashCardMotion(prefersReducedMotion, 2, 1, false, 0.05)}
                 >
                   <div className="mp-stats-kpi-top">
                     <span className="mp-stats-kpi-label">نسبة الإتمام</span>
@@ -1027,9 +1022,7 @@ export const StatsPage: React.FC = () => {
 
                 <motion.div
                   className="mp-stats-kpi-tile"
-                  initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: 0.18 }}
+                  {...dashCardMotion(prefersReducedMotion, 3, 1, false, 0.05)}
                 >
                   <div className="mp-stats-kpi-top">
                     <span className="mp-stats-kpi-label">الأكثر طلباً</span>
@@ -1093,9 +1086,9 @@ export const StatsPage: React.FC = () => {
                             initial={prefersReducedMotion ? false : { height: '4%' }}
                             animate={{ height: `${heightPct}%` }}
                             transition={{
-                              duration: 0.6,
-                              delay: prefersReducedMotion ? 0 : idx * 0.03,
-                              ease: [0.16, 1, 0.3, 1],
+                              duration: 0.9,
+                              delay: prefersReducedMotion ? 0 : idx * 0.045,
+                              ease: DASH_EASE,
                             }}
                           />
                         </div>
@@ -1124,7 +1117,7 @@ export const StatsPage: React.FC = () => {
                           key={ch.id}
                           initial={prefersReducedMotion ? false : { width: 0 }}
                           animate={{ width: `${ch.pct}%` }}
-                          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                          transition={{ duration: 1.05, ease: DASH_EASE }}
                           style={{ height: '100%', background: ch.color }}
                         />
                       ) : null
@@ -1271,7 +1264,7 @@ export const StatsPage: React.FC = () => {
                               <motion.div
                                 initial={prefersReducedMotion ? false : { width: 0 }}
                                 animate={{ width: `${pct}%` }}
-                                transition={{ duration: 0.7, delay: prefersReducedMotion ? 0 : idx * 0.05, ease: [0.16, 1, 0.3, 1] }}
+                                transition={{ duration: 1.05, delay: prefersReducedMotion ? 0 : idx * 0.075, ease: DASH_EASE }}
                                 style={{
                                   height: '100%',
                                   borderRadius: '99px',
@@ -1506,7 +1499,7 @@ export const StatsPage: React.FC = () => {
                                     height: '100%',
                                     borderRadius: '99px',
                                     background: 'var(--brand)',
-                                    transition: 'width 0.3s ease',
+                                    transition: 'width 0.52s cubic-bezier(0.22, 1, 0.36, 1)',
                                   }}
                                 />
                               </div>
@@ -1599,7 +1592,7 @@ export const StatsPage: React.FC = () => {
                                   height: '100%',
                                   borderRadius: '99px',
                                   background: 'var(--brand)',
-                                  transition: 'width 0.3s ease',
+                                  transition: 'width 0.52s cubic-bezier(0.22, 1, 0.36, 1)',
                                 }}
                               />
                             </div>

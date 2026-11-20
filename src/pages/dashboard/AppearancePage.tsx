@@ -13,6 +13,7 @@ import {
   getContrastInk,
   resolveMenuThemeEffectiveMode,
 } from '../../utils/plans';
+import { dashCardMotion, dashSectionMotion } from '../../utils/dashboardMotion';
 import { useDashboard } from './DashboardContext';
 
 export const AppearancePage: React.FC = () => {
@@ -51,9 +52,7 @@ export const AppearancePage: React.FC = () => {
       <div className="mp-appearance-page">
         <motion.section
           className="mp-appearance-section mp-estore-appearance-card"
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0)}
         >
           <div className="mp-estore-appearance-head">
             <div className="mp-estore-appearance-badge">
@@ -200,12 +199,7 @@ export const AppearancePage: React.FC = () => {
   const customInkPreview = customBgIsLight ? '#0f172a' : '#f8fafc';
   const customLinePreview = customBgIsLight ? 'rgba(15, 23, 42, 0.14)' : 'rgba(255, 255, 255, 0.16)';
 
-  const sectionRevealProps = {
-    initial: prefersReducedMotion ? false : { opacity: 0, y: 26, scale: 0.985 },
-    whileInView: { opacity: 1, y: 0, scale: 1 },
-    viewport: { once: true, amount: 0.12 as const },
-    transition: { duration: 0.92, ease: [0.16, 1, 0.3, 1] as const },
-  };
+  const sectionRevealProps = dashSectionMotion(prefersReducedMotion, 0, true);
 
   return (
     <div className="mp-appearance-page">
@@ -213,9 +207,7 @@ export const AppearancePage: React.FC = () => {
       {resolvedPlan.perms.lightDarkMode && (
         <motion.div
           className="mp-appearance-top-bar"
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 20, scale: 0.985 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0)}
         >
           <div className="mp-appearance-mode-wrap">
             <h2 className="mp-appearance-section-title">
@@ -254,9 +246,7 @@ export const AppearancePage: React.FC = () => {
       {/* 2. Product Display Layouts */}
       <motion.section
         className="mp-appearance-section"
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 24, scale: 0.985 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.9, delay: prefersReducedMotion ? 0 : 0.08, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0.12)}
       >
         <h2 className="mp-appearance-section-title" style={{ marginBottom: '12px' }}>
           اختر طريقة عرض المنتجات
@@ -273,11 +263,7 @@ export const AppearancePage: React.FC = () => {
                 onClick={() => handleInstantLayoutSelect(lay.id)}
                 className={`mp-appearance-layout-card ${isSelected ? 'selected' : ''}`}
                 style={{ opacity: layoutAllowed ? 1 : 0.65 }}
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
-                animate={{ opacity: layoutAllowed ? 1 : 0.65, y: 0 }}
-                transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : 0.1 + idx * 0.095, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={prefersReducedMotion ? undefined : { y: -3 }}
-                whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
+                {...dashCardMotion(prefersReducedMotion, idx, layoutAllowed ? 1 : 0.65, false, 0.15)}
               >
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: '6px' }}>
                   <span style={{ fontSize: '24px', lineHeight: 1 }}>{lay.icon}</span>
@@ -331,9 +317,7 @@ export const AppearancePage: React.FC = () => {
       <section className="mp-appearance-section">
         <motion.div
           style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 20, scale: 0.985 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.92, delay: prefersReducedMotion ? 0 : 0.16, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0.24)}
         >
           <div style={{ width: '36px', height: '36px', borderRadius: '10px', background: 'color-mix(in srgb, var(--surface) 40%, transparent)', border: '1px solid var(--line)', color: 'var(--brand-ink, #34D399)', display: 'grid', placeItems: 'center', flexShrink: 0 }}>
             <Palette size={18} />
@@ -366,21 +350,13 @@ export const AppearancePage: React.FC = () => {
                   borderColor: isSelected ? pal.brand : undefined,
                   opacity: targetOpacity,
                 }}
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-                animate={showWithInitialSection ? { opacity: targetOpacity, y: 0 } : undefined}
-                whileInView={showWithInitialSection ? undefined : { opacity: targetOpacity, y: 0 }}
-                viewport={showWithInitialSection ? undefined : { once: true, amount: 0.08 }}
-                transition={{
-                  duration: 0.8,
-                  delay: prefersReducedMotion
-                    ? 0
-                    : showWithInitialSection
-                    ? 0.22 + idx * 0.1
-                    : Math.min((idx - 2) * 0.065, 0.38),
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                whileHover={prefersReducedMotion ? undefined : { y: -3 }}
-                whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
+                {...dashCardMotion(
+                  prefersReducedMotion,
+                  showWithInitialSection ? idx : idx - 2,
+                  targetOpacity,
+                  !showWithInitialSection,
+                  showWithInitialSection ? 0.32 : 0.06
+                )}
               >
                 <div
                   className="mp-theme-mini-preview"
@@ -436,11 +412,7 @@ export const AppearancePage: React.FC = () => {
               borderColor: isCustomSelected ? customBrandHex : undefined,
               opacity: resolvedPlan.perms.customColors ? 1 : 0.72,
             }}
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
-            whileInView={{ opacity: resolvedPlan.perms.customColors ? 1 : 0.72, y: 0 }}
-            viewport={{ once: true, amount: 0.08 }}
-            transition={{ duration: 0.85, delay: prefersReducedMotion ? 0 : 0.28, ease: [0.16, 1, 0.3, 1] }}
-            whileHover={prefersReducedMotion ? undefined : { y: -3 }}
+            {...dashCardMotion(prefersReducedMotion, 2, resolvedPlan.perms.customColors ? 1 : 0.72, true, 0.14)}
           >
             <div
               className="mp-theme-mini-preview"
@@ -579,12 +551,7 @@ export const AppearancePage: React.FC = () => {
                 type="button"
                 onClick={() => handleSelectThemeShape(shape.id)}
                 className={`mp-appearance-shape-card ${isSelected ? 'selected' : ''}`}
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.08 }}
-                transition={{ duration: 0.8, delay: prefersReducedMotion ? 0 : Math.min(idx * 0.07, 0.4), ease: [0.16, 1, 0.3, 1] }}
-                whileHover={prefersReducedMotion ? undefined : { y: -3 }}
-                whileTap={prefersReducedMotion ? undefined : { scale: 0.98 }}
+                {...dashCardMotion(prefersReducedMotion, idx, 1, true, 0.06)}
               >
                 <div className={`mp-shape-preview mp-shape-preview-${shape.id}`}>
                   <div className="mp-shape-mini-banner">
@@ -608,11 +575,11 @@ export const AppearancePage: React.FC = () => {
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', gap: '6px' }}>
                   <b style={{ fontSize: '13px', color: isSelected ? 'var(--brand-ink, #34D399)' : 'var(--ink)' }}>
                     {shape.name}
                   </b>
-                  {isSelected && (
+                  {isSelected ? (
                     <span
                       style={{
                         fontSize: '10px',
@@ -622,11 +589,27 @@ export const AppearancePage: React.FC = () => {
                         padding: '2px 6px',
                         borderRadius: '7px',
                         border: '1px solid var(--brand)',
+                        whiteSpace: 'nowrap',
                       }}
                     >
                       مفعّل ✓
                     </span>
-                  )}
+                  ) : shape.badge ? (
+                    <span
+                      style={{
+                        fontSize: '10px',
+                        fontWeight: 800,
+                        color: 'var(--brand-ink, #34D399)',
+                        background: 'color-mix(in srgb, var(--brand) 12%, transparent)',
+                        padding: '2px 6px',
+                        borderRadius: '7px',
+                        border: '1px solid color-mix(in srgb, var(--brand) 28%, transparent)',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {shape.badge}
+                    </span>
+                  ) : null}
                 </div>
                 <span style={{ fontSize: '11px', color: 'var(--muted)', lineHeight: 1.4 }}>
                   {shape.subtitle}

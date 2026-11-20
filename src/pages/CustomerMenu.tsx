@@ -332,7 +332,11 @@ const PublicMenuContent: React.FC<PublicMenuContentProps> = ({
   );
   const activeShape: MenuThemeShape = isEstore
     ? 'estore'
-    : rest?.themeShape === 'toters' ||
+    : rest?.themeShape === 'silk' ||
+      rest?.themeShape === 'editorial' ||
+      rest?.themeShape === 'velvet' ||
+      rest?.themeShape === 'luxe' ||
+      rest?.themeShape === 'toters' ||
       rest?.themeShape === 'glass' ||
       rest?.themeShape === 'cartoon' ||
       rest?.themeShape === 'dreamy' ||

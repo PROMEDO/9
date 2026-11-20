@@ -32,6 +32,7 @@ import {
   unlinkDashboardTelegramApi,
   verifyDashboardTelegramApi,
 } from '../../utils/adminApi';
+import { dashSectionMotion } from '../../utils/dashboardMotion';
 
 const DEFAULT_TELEGRAM_PROXY_URL =
   'https://t.me/proxy?server=heremit.larval.nonce.rubricate.textbook.watchpinoyteleserye.com&port=1250&secret=eeeaa279236535275f4071a1279335415773332e616d617a6f6e6177732e636f6d&bot=@mtpro_xyz_bot&channel=@mtpro_xyz';
@@ -399,9 +400,7 @@ export const TelegramPage: React.FC<TelegramPageProps> = ({
         <motion.div
           className="hd"
           style={{ marginBottom: '16px' }}
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0)}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
             <h2 style={{ margin: 0, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
@@ -437,9 +436,7 @@ export const TelegramPage: React.FC<TelegramPageProps> = ({
       ) : (
         <motion.div
           className={embedded ? 'mp-set2-panel' : 'card'}
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.88, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0.06)}
           style={embedded ? undefined : { ...surfaceCardStyle, padding: '22px' }}
         >
           {embedded && (
@@ -693,10 +690,7 @@ export const TelegramPage: React.FC<TelegramPageProps> = ({
       {!loading && (
         <motion.div
           className={embedded ? 'mp-set2-panel' : 'card'}
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.08 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0.06, true)}
           style={
             embedded
               ? undefined
@@ -853,10 +847,7 @@ export const TelegramPage: React.FC<TelegramPageProps> = ({
       {!loading && status && (
         <motion.div
           className={embedded ? 'mp-set2-panel' : 'card'}
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.08 }}
-          transition={{ duration: 0.9, delay: prefersReducedMotion ? 0 : 0.08, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0.12, true)}
           style={
             embedded
               ? undefined

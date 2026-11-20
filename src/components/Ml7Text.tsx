@@ -11,6 +11,7 @@ interface Ml7TextProps {
   mode?: 'mount' | 'inView';
   delay?: number;
   stagger?: number;
+  duration?: number;
   isRtl?: boolean;
   className?: string;
   style?: React.CSSProperties;
@@ -23,6 +24,7 @@ export const Ml7Text: React.FC<Ml7TextProps> = ({
   mode = 'inView',
   delay = 0,
   stagger = 0.13,
+  duration = 1.5,
   isRtl = true,
   className,
   style,
@@ -87,7 +89,7 @@ export const Ml7Text: React.FC<Ml7TextProps> = ({
                     initial={initialState}
                     animate={shouldAnimate ? targetState : initialState}
                     transition={{
-                      duration: 1.5,
+                      duration,
                       delay: tokenDelay,
                       ease: [0.19, 1, 0.22, 1],
                     }}

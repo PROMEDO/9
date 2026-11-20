@@ -15,6 +15,7 @@ import {
   getLocalizedQrBgLabel,
 } from '../../components/QRCodeView';
 import { surfaceCardStyle, useDashboard } from './DashboardContext';
+import { dashCardMotion, dashSectionMotion } from '../../utils/dashboardMotion';
 
 const QR_COLOR_SWATCHES = ['#0f172a', '#065f46', '#1e3a8a', '#7c2d12', '#581c87'];
 
@@ -74,9 +75,7 @@ export const QrPage: React.FC = () => {
     <div style={{ maxWidth: '880px', margin: '0 auto' }}>
       <motion.div
         style={{ marginBottom: '20px', textAlign: 'center' }}
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0)}
       >
         <h1 style={{ margin: '0 0 6px', fontSize: '22px', fontWeight: 900, color: 'var(--ink)' }}>
           {customTabLabel('qr', 'كود الـ QR')}
@@ -88,9 +87,7 @@ export const QrPage: React.FC = () => {
 
       {!resolvedPlan.perms.qrCode ? (
         <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 14, scale: 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.88, ease: [0.16, 1, 0.3, 1] }}
+          {...dashCardMotion(prefersReducedMotion, 0, 1, false, 0.08)}
           style={{ ...surfaceCardStyle, padding: '36px 24px', borderRadius: '20px', textAlign: 'center', maxWidth: '520px', margin: '0 auto' }}
         >
           <div style={{ width: '54px', height: '54px', borderRadius: '16px', background: 'rgba(245, 158, 11, 0.14)', color: '#f59e0b', display: 'grid', placeItems: 'center', margin: '0 auto 14px' }}>
@@ -119,9 +116,7 @@ export const QrPage: React.FC = () => {
         </motion.div>
       ) : (
         <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0.1)}
           className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start"
           style={{ ...surfaceCardStyle, padding: '22px', borderRadius: '22px' }}
         >

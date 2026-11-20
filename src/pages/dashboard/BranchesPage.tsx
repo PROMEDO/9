@@ -19,6 +19,12 @@ import { getCollection } from '../../utils/storage';
 import { Category, MenuItem } from '../../types';
 import { getFullSubdomainUrl, getPublicMenuUrlPath } from '../../utils/businessDefaults';
 import { surfaceCardStyle, themedInputStyle, useDashboard } from './DashboardContext';
+import {
+  DASH_EASE,
+  dashCardMotion,
+  dashModalMotion,
+  dashSectionMotion,
+} from '../../utils/dashboardMotion';
 
 export const BranchesPage: React.FC = () => {
   const prefersReducedMotion = useReducedMotion();
@@ -100,11 +106,11 @@ export const BranchesPage: React.FC = () => {
             type="button"
             onClick={handleOpenCreateModal}
             className="btn p"
-            initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            whileHover={prefersReducedMotion ? undefined : { scale: 1.03 }}
-            whileTap={prefersReducedMotion ? undefined : { scale: 0.96 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.92, filter: 'blur(4px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+            transition={{ duration: 1.28, ease: DASH_EASE }}
+            whileHover={prefersReducedMotion ? undefined : { y: -2, scale: 1.03, transition: { duration: 0.42, ease: DASH_EASE } }}
+            whileTap={prefersReducedMotion ? undefined : { scale: 0.96, transition: { duration: 0.22 } }}
             style={{
               height: '46px',
               padding: '0 24px',
@@ -129,8 +135,8 @@ export const BranchesPage: React.FC = () => {
               type="button"
               onClick={handleOpenCreateModal}
               className="btn p"
-              whileHover={prefersReducedMotion ? undefined : { scale: 1.03 }}
-              whileTap={prefersReducedMotion ? undefined : { scale: 0.96 }}
+              whileHover={prefersReducedMotion ? undefined : { y: -2, scale: 1.025, transition: { duration: 0.42, ease: DASH_EASE } }}
+              whileTap={prefersReducedMotion ? undefined : { scale: 0.96, transition: { duration: 0.22 } }}
               style={{
                 height: '44px',
                 padding: '0 22px',
@@ -158,9 +164,7 @@ export const BranchesPage: React.FC = () => {
 
               return (
                 <motion.div
-                  initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.88, ease: [0.16, 1, 0.3, 1] }}
+                  {...dashSectionMotion(prefersReducedMotion, 0.04)}
                   style={{
                     ...surfaceCardStyle,
                     borderRadius: '18px',
@@ -246,9 +250,7 @@ export const BranchesPage: React.FC = () => {
               return (
                 <motion.div
                   key={branch.id}
-                  initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : Math.min(idx * 0.07, 0.35), ease: [0.16, 1, 0.3, 1] }}
+                  {...dashCardMotion(prefersReducedMotion, idx, 1, false, 0.08)}
                   style={{
                     ...surfaceCardStyle,
                     borderRadius: '18px',
@@ -345,7 +347,7 @@ export const BranchesPage: React.FC = () => {
             initial={prefersReducedMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={prefersReducedMotion ? undefined : { opacity: 0 }}
-            transition={{ duration: 0.55 }}
+            transition={{ duration: 0.72, ease: DASH_EASE }}
             onClick={() => setShowCreateModal(false)}
             style={{
               position: 'fixed',
@@ -363,10 +365,7 @@ export const BranchesPage: React.FC = () => {
             <motion.form
               onSubmit={handleCreate}
               onClick={(e) => e.stopPropagation()}
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.95, y: 12 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={prefersReducedMotion ? undefined : { opacity: 0, scale: 0.96, y: 8 }}
-              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              {...dashModalMotion(prefersReducedMotion)}
               style={{
                 ...surfaceCardStyle,
                 width: '100%',

@@ -32,7 +32,23 @@ export interface MenuThemeDefinition extends MenuThemePalette {
 }
 
 export interface MenuShapeDefinition {
-  id: 'modern' | 'toters' | 'glass' | 'cartoon' | 'dreamy' | 'pill' | 'sharp' | 'bordered' | 'soft' | 'ramadan' | 'eid' | 'newyear';
+  id:
+    | 'modern'
+    | 'silk'
+    | 'editorial'
+    | 'velvet'
+    | 'luxe'
+    | 'toters'
+    | 'glass'
+    | 'cartoon'
+    | 'dreamy'
+    | 'pill'
+    | 'sharp'
+    | 'bordered'
+    | 'soft'
+    | 'ramadan'
+    | 'eid'
+    | 'newyear';
   name: string;
   subtitle: string;
   badge?: string;
@@ -43,6 +59,30 @@ export const MENU_SHAPES: MenuShapeDefinition[] = [
     id: 'modern',
     name: 'عصري ناعم',
     subtitle: 'زوايا متوازنة وظلال مريحة لكل الصفحة والبطاقات',
+  },
+  {
+    id: 'silk',
+    name: 'حريري انسيابي',
+    subtitle: 'انحناءات حريرية انسيابية ولمعة هادئة وتمرير سلس للبطاقات والبنر',
+    badge: 'جديد ✨',
+  },
+  {
+    id: 'editorial',
+    name: 'تحريري فاخر',
+    subtitle: 'تنسيق مجلات راقٍ بخط جانبي أنيق وإطار متزن للمطاعم والكافيهات الفاخرة',
+    badge: 'احترافي ✦',
+  },
+  {
+    id: 'velvet',
+    name: 'مخملي راقٍ',
+    subtitle: 'عمق مخملي متعدد الطبقات مع إضاءة علوية ناعمة وهالة دائرية للشعار',
+    badge: 'أنيق 💎',
+  },
+  {
+    id: 'luxe',
+    name: 'مينيمال راقٍ',
+    subtitle: 'بساطة عصرية فائقة النظافة بخطوط رفيعة وانتقالات هادئة ومريحة للعين',
+    badge: 'سلس ⚡',
   },
   {
     id: 'toters',

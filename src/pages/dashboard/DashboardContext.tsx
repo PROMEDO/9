@@ -1050,7 +1050,11 @@ function useDashboardController({
   const isInitialStore = isStoreProject(rest.projectType);
   const normalizeShapeChoice = (raw?: string, storeFlag = isInitialStore): MenuThemeShape => {
     if (storeFlag) return 'estore';
-    return raw === 'toters' ||
+    return raw === 'silk' ||
+      raw === 'editorial' ||
+      raw === 'velvet' ||
+      raw === 'luxe' ||
+      raw === 'toters' ||
       raw === 'glass' ||
       raw === 'cartoon' ||
       raw === 'dreamy' ||

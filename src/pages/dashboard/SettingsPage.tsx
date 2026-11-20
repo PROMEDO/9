@@ -45,6 +45,12 @@ import {
   themedInputStyle,
   useDashboard,
 } from './DashboardContext';
+import {
+  DASH_EASE,
+  DASH_SPRING_PILL,
+  dashSectionMotion,
+  dashSubTabMotion,
+} from '../../utils/dashboardMotion';
 import { TelegramPage } from './TelegramPage';
 
 export const SettingsPage: React.FC = () => {
@@ -330,9 +336,7 @@ export const SettingsPage: React.FC = () => {
         className="mp-set2-tabs-bar"
         role="tablist"
         aria-label="أقسام الإعدادات"
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0)}
       >
         {tabs.map((tab) => {
           const isActive = sectionTab === tab.id;
@@ -350,7 +354,7 @@ export const SettingsPage: React.FC = () => {
                 <motion.span
                   layoutId={prefersReducedMotion ? undefined : 'mp-set2-active-pill'}
                   className="mp-set2-tab-pill"
-                  transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                  transition={DASH_SPRING_PILL}
                 />
               )}
               <TabIcon size={14} />
@@ -372,10 +376,7 @@ export const SettingsPage: React.FC = () => {
           {sectionTab === 'ops' && (
             <motion.div
               key="tab-ops"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={prefersReducedMotion ? undefined : { opacity: 0, y: -6 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              {...dashSubTabMotion(prefersReducedMotion)}
               style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}
             >
               {/* Live Menu Status Hero Card */}
@@ -647,7 +648,8 @@ export const SettingsPage: React.FC = () => {
                       <motion.button
                         key={opt.id}
                         type="button"
-                        whileTap={prefersReducedMotion ? undefined : { scale: 0.985 }}
+                        whileHover={prefersReducedMotion ? undefined : { y: -2, transition: { duration: 0.38, ease: DASH_EASE } }}
+                        whileTap={prefersReducedMotion ? undefined : { scale: 0.985, transition: { duration: 0.2 } }}
                         onClick={() => setOrderChannel(opt.id)}
                         className={`mp-set2-channel-card ${selected ? 'is-selected' : ''}`}
                         style={{
@@ -751,10 +753,10 @@ export const SettingsPage: React.FC = () => {
                 <AnimatePresence initial={false}>
                   {workMode === 'c' && (
                     <motion.div
-                      initial={prefersReducedMotion ? false : { opacity: 0, y: 6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={prefersReducedMotion ? undefined : { opacity: 0, y: -4 }}
-                      transition={{ duration: 0.2 }}
+                      initial={prefersReducedMotion ? false : { opacity: 0, x: -12, scale: 0.99 }}
+                      animate={{ opacity: 1, x: 0, scale: 1 }}
+                      exit={prefersReducedMotion ? undefined : { opacity: 0, x: 10, scale: 0.99 }}
+                      transition={{ duration: 0.45, ease: DASH_EASE }}
                       style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}
                     >
                       {/* Quick Unified Time Bar */}
@@ -1040,10 +1042,7 @@ export const SettingsPage: React.FC = () => {
           {sectionTab === 'identity' && (
             <motion.div
               key="tab-identity"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={prefersReducedMotion ? undefined : { opacity: 0, y: -6 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              {...dashSubTabMotion(prefersReducedMotion)}
               style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}
             >
               {/* Business Type & Core Info */}
@@ -1502,10 +1501,7 @@ export const SettingsPage: React.FC = () => {
           {sectionTab === 'links' && (
             <motion.div
               key="tab-links"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={prefersReducedMotion ? undefined : { opacity: 0, y: -6 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              {...dashSubTabMotion(prefersReducedMotion)}
               style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}
             >
               {/* Custom Link / Subdomain */}
@@ -1776,10 +1772,7 @@ export const SettingsPage: React.FC = () => {
           {sectionTab === 'telegram' && (
             <motion.div
               key="tab-telegram"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={prefersReducedMotion ? undefined : { opacity: 0, y: -6 }}
-              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              {...dashSubTabMotion(prefersReducedMotion)}
               style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}
             >
               <TelegramPage

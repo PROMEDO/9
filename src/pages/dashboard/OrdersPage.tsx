@@ -29,6 +29,7 @@ import {
 import { Order } from '../../types';
 import { copyTextReliable, formatNumber, waLink } from '../../utils/storage';
 import { surfaceCardStyle, useDashboard } from './DashboardContext';
+import { dashModalMotion, dashRowMotion, dashSectionMotion } from '../../utils/dashboardMotion';
 
 function formatOrderDayAndTime(order: Order): string {
   const locale = 'ar-IQ-u-nu-latn';
@@ -221,9 +222,7 @@ export const OrdersPage: React.FC = () => {
     <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
       <motion.div
         className="mp-orders-toolbar"
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0)}
       >
         <div className="mp-orders-tabs" role="tablist" aria-label="تصفية الطلبات">
           <button
@@ -308,10 +307,7 @@ export const OrdersPage: React.FC = () => {
               <motion.div
                 key={order.id}
                 className="mp-order-row"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.08 }}
-                transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : Math.min(idx * 0.06, 0.36), ease: [0.16, 1, 0.3, 1] }}
+                {...dashRowMotion(prefersReducedMotion, idx, true)}
               >
                 <div className="mp-order-top-line">
                   <div className="mp-order-meta-group">
@@ -417,9 +413,7 @@ export const OrdersPage: React.FC = () => {
               aria-modal="true"
               aria-label={`تفاصيل الطلب ${displayOrderNum}`}
               onClick={(e) => e.stopPropagation()}
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              {...dashModalMotion(prefersReducedMotion)}
               style={{
                 width: 'min(560px, 100%)',
                 maxHeight: '90dvh',
@@ -861,9 +855,7 @@ export const OrdersPage: React.FC = () => {
               aria-label={`تغيير حالة الطلب ${displayNum}`}
               className="mp-status-picker-card"
               onClick={(e) => e.stopPropagation()}
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.95, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              {...dashModalMotion(prefersReducedMotion)}
               style={surfaceCardStyle}
             >
               <div className="mp-status-picker-header">

@@ -9,6 +9,7 @@ import { AlertTriangle, Eye, GitBranch, Loader2, LogOut, MessageCircle, Save, Sh
 import { AppLogo } from '../../components/AppLogo';
 import { AjaxConfirmModal } from '../../components/AjaxConfirmModal';
 import { DEFAULT_SITE } from '../../utils/storage';
+import { dashTabMotion } from '../../utils/dashboardMotion';
 import {
   DashboardProvider,
   DashboardTab,
@@ -496,9 +497,7 @@ const DashboardShell: React.FC = () => {
         <Suspense fallback={<TabFallback />}>
           <motion.div
             key={activeTab}
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.88, ease: [0.16, 1, 0.3, 1] }}
+            {...dashTabMotion(prefersReducedMotion)}
           >
             {activeTab === 'home' && <HomePage />}
             {activeTab === 'cats' && <CategoriesPage />}

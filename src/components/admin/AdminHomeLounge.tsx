@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { Session, StaffPermissions } from '../../types';
 import type { AdminTabId } from '../../utils/router';
+import { dashSectionMotion } from '../../utils/dashboardMotion';
 
 interface AdminHomeLoungeProps {
   session?: Session;
@@ -342,9 +343,7 @@ export const AdminHomeLounge: React.FC<AdminHomeLoungeProps> = () => {
       >
         {/* Date & Live Local Time */}
         <motion.div
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0)}
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}
         >
           <div
@@ -376,9 +375,7 @@ export const AdminHomeLounge: React.FC<AdminHomeLoungeProps> = () => {
         {/* Clean Local Weather Card */}
         <motion.div
           className="card"
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 16, scale: 0.985 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.9, delay: prefersReducedMotion ? 0 : 0.1, ease: [0.16, 1, 0.3, 1] }}
+          {...dashSectionMotion(prefersReducedMotion, 0.15)}
           style={{
             width: '100%',
             padding: '22px 24px',

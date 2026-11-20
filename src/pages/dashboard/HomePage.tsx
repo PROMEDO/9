@@ -14,6 +14,7 @@ import {
 import { fetchDashboardTelegramStatusApi } from '../../utils/adminApi';
 import { DEFAULT_MEDIA_ASSETS } from '../../utils/businessDefaults';
 import { Ml7Text } from '../../components/Ml7Text';
+import { dashRowMotion, dashSectionMotion } from '../../utils/dashboardMotion';
 import { SettingsSectionTab, useDashboard } from './DashboardContext';
 
 export const HomePage: React.FC = () => {
@@ -270,17 +271,16 @@ export const HomePage: React.FC = () => {
               <Ml7Text
                 text={terms.isStore ? 'خطوات استكمال جاهزية المتجر 🛍️' : 'خطوات استكمال جاهزية المنيو 💡'}
                 mode="mount"
-                delay={0.08}
-                stagger={0.12}
+                delay={0.12}
+                stagger={0.18}
+                duration={2.25}
                 isRtl
               />
             </h2>
 
             <motion.p
               className="mp-home-section-sub"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              {...dashSectionMotion(prefersReducedMotion, 0.38)}
             >
               {terms.isStore
                 ? 'أكمل الخطوات التالية ليكون متجرك جاهزاً لاستقبال الطلبات بأفضل شكل:'
@@ -317,14 +317,7 @@ export const HomePage: React.FC = () => {
                   }}
                   className={`btn s mp-home-tip-btn ${tip.done ? 'is-done' : ''}`}
                   dir="rtl"
-                  initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{
-                    duration: 0.75,
-                    delay: prefersReducedMotion ? 0 : Math.min(idx * 0.06, 0.35),
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
+                  {...dashRowMotion(prefersReducedMotion, idx, true)}
                 >
                   <span className="mp-home-tip-icon" aria-hidden="true">
                     {tip.done ? (

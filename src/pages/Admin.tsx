@@ -76,6 +76,11 @@ import {
   waLink,
 } from '../utils/storage';
 import {
+  dashCardMotion,
+  dashSectionMotion,
+  dashTabMotion,
+} from '../utils/dashboardMotion';
+import {
   Home,
   LayoutDashboard,
   Store,
@@ -1069,9 +1074,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
         >
         <motion.div
           key={effectiveTab}
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.88, ease: [0.16, 1, 0.3, 1] }}
+          {...dashTabMotion(prefersReducedMotion)}
         >
         {/* ============================================================== */}
         {/* TAB 0: HOME REST STATION / LOUNGE (الصفحة الرئيسية - محطة الاستراحة) */}
@@ -1117,40 +1120,28 @@ export const AdminView: React.FC<AdminViewProps> = ({
             <div className="kp k4" style={{ margin: '18px 0' }}>
               <motion.div
                 className="card"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : 0.06, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={prefersReducedMotion ? undefined : { y: -2 }}
+                {...dashCardMotion(prefersReducedMotion, 0, 1, false, 0.08)}
               >
                 <div className="v tabular-nums">{paidPartners.length}</div>
                 <div className="l">الشركاء المشتركون (باقة مدفوعة) 🌟</div>
               </motion.div>
               <motion.div
                 className="card"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : 0.14, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={prefersReducedMotion ? undefined : { y: -2 }}
+                {...dashCardMotion(prefersReducedMotion, 1, 1, false, 0.08)}
               >
                 <div className="v tabular-nums">{trialPartners.length}</div>
                 <div className="l">المنيوات التجريبية المجانية 🆓</div>
               </motion.div>
               <motion.div
                 className="card"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : 0.22, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={prefersReducedMotion ? undefined : { y: -2 }}
+                {...dashCardMotion(prefersReducedMotion, 2, 1, false, 0.08)}
               >
                 <div className="v tabular-nums">{totalOrdersCount}</div>
                 <div className="l">إجمالي الطلبات بالمنصة 📦</div>
               </motion.div>
               <motion.div
                 className="card"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : 0.3, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={prefersReducedMotion ? undefined : { y: -2 }}
+                {...dashCardMotion(prefersReducedMotion, 3, 1, false, 0.08)}
               >
                 <div className="v tabular-nums">{thisMonthOrdersCount}</div>
                 <div className="l">طلبات هذا الشهر 📈</div>
@@ -1163,10 +1154,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
             {/* Embedded Activity Log (سجل النشاطات مدمج هنا لرؤية حركات المشرفين) */}
             <motion.div
               className="card"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.06 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              {...dashSectionMotion(prefersReducedMotion, 0.08, true)}
             >
               <div
                 style={{
@@ -1335,10 +1323,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '12px', marginBottom: '18px' }}>
               <motion.div
                 className="card"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : 0.06, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={prefersReducedMotion ? undefined : { y: -2 }}
+                {...dashCardMotion(prefersReducedMotion, 0, 1, false, 0.08)}
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
               >
                 <div>
@@ -1360,10 +1345,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
               <motion.div
                 className="card"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : 0.14, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={prefersReducedMotion ? undefined : { y: -2 }}
+                {...dashCardMotion(prefersReducedMotion, 1, 1, false, 0.08)}
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
               >
                 <div>
@@ -1385,10 +1367,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
 
               <motion.div
                 className="card"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.82, delay: prefersReducedMotion ? 0 : 0.22, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={prefersReducedMotion ? undefined : { y: -2 }}
+                {...dashCardMotion(prefersReducedMotion, 2, 1, false, 0.08)}
                 style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}
               >
                 <div>
@@ -1416,10 +1395,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
             {/* Live Interactive Phone Simulator (Real iPhone Size) */}
             <motion.div
               className="card"
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.08 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              {...dashSectionMotion(prefersReducedMotion, 0.08, true)}
               style={{ textAlign: 'center', padding: '24px 14px' }}
             >
               <h3 style={{ marginBottom: '6px', fontSize: '18px' }}>محاكي الآيفون التفاعلي الحي</h3>
@@ -1586,10 +1562,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               <motion.div
                 id="adm-general"
                 className="mp-framed-wrap"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.06 }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                {...dashSectionMotion(prefersReducedMotion, 0, true)}
               >
                 <div className="mp-framed-title">
                   <span>مظهر لوحة الإدارة ولوحة تحكم الزبائن</span>
@@ -1811,10 +1784,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                   <motion.div
                     id="adm-fonts"
                     className="mp-framed-wrap"
-                    initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.06 }}
-                    transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                    {...dashSectionMotion(prefersReducedMotion, 0.04, true)}
                   >
                     <div className="mp-framed-title" style={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
                       <span style={{ display: 'inline-flex', alignItems: 'center', gap: '7px' }}>
@@ -1857,7 +1827,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                                 display: 'flex',
                                 flexDirection: 'column',
                                 gap: '6px',
-                                transition: 'border-color 0.15s ease, background-color 0.15s ease',
+                                transition: 'border-color 0.32s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.32s cubic-bezier(0.22, 1, 0.36, 1), transform 0.32s cubic-bezier(0.22, 1, 0.36, 1)',
                               }}
                             >
                               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px' }}>
@@ -2023,10 +1993,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               <motion.div
                 id="adm-payment"
                 className="mp-framed-wrap"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.06 }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                {...dashSectionMotion(prefersReducedMotion, 0.04, true)}
               >
                 <div className="mp-framed-title">
                   <Wallet size={15} style={{ color: 'var(--brand-ink, #34D399)' }} />
@@ -2086,10 +2053,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
               {/* Frames 3 & 4: Side-by-Side Equal-Sized Menu Button Lists (Admin + Customer Tabs) */}
               <motion.div
                 className="mp-tabs-dual-grid"
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.06 }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                {...dashSectionMotion(prefersReducedMotion, 0.04, true)}
               >
                 <div id="adm-tabs-admin" className="mp-framed-wrap mp-tabs-col">
                   <div className="mp-framed-title">
@@ -2267,10 +2231,7 @@ export const AdminView: React.FC<AdminViewProps> = ({
                 <motion.div
                   id="adm-plan-features"
                   className="mp-framed-wrap"
-                  initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.06 }}
-                  transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                  {...dashSectionMotion(prefersReducedMotion, 0.04, true)}
                 >
                   <div className="mp-framed-title" style={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
                     <span>تعديل وترتيب ميزات الباقات في الصفحة الرئيسية (من الأعلى للأسفل)</span>

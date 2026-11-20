@@ -2731,16 +2731,27 @@ async function startServer() {
       })
     );
 
-    // Prevent returning HTML index.html for missing JS/CSS/media files
-    const cachedProdHtml = fs.existsSync(indexHtmlPath)
-      ? fs.readFileSync(indexHtmlPath, 'utf-8')
-      : null;
+    // Cache dist/index.html keyed by file mtime so live rebuilds never serve stale CSS/JS hashes
+    let cachedProdHtml: string | null = null;
+    let cachedProdHtmlMtime = -1;
+    const readFreshProdHtml = (): string | null => {
+      try {
+        const st = fs.statSync(indexHtmlPath);
+        if (!cachedProdHtml || st.mtimeMs !== cachedProdHtmlMtime) {
+          cachedProdHtml = fs.readFileSync(indexHtmlPath, 'utf-8');
+          cachedProdHtmlMtime = st.mtimeMs;
+        }
+        return cachedProdHtml;
+      } catch {
+        return cachedProdHtml;
+      }
+    };
 
     app.get('*', async (req, res, next) => {
       if (req.path.startsWith('/assets/') || ASSET_EXTENSION_RE.test(req.path)) {
         return res.status(404).end();
       }
-      const rawHtml = cachedProdHtml || (fs.existsSync(indexHtmlPath) ? fs.readFileSync(indexHtmlPath, 'utf-8') : null);
+      const rawHtml = readFreshProdHtml();
       if (!rawHtml) {
         return res.status(500).send('Build output not found. Run npm run build first.');
       }

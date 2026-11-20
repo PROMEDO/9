@@ -34,6 +34,12 @@ import {
   themedInputStyle,
   useDashboard,
 } from './DashboardContext';
+import {
+  dashModalMotion,
+  dashSectionMotion,
+  dashSubTabMotion,
+  dashTabMotion,
+} from '../../utils/dashboardMotion';
 
 export const ItemsPage: React.FC = () => {
   const prefersReducedMotion = useReducedMotion();
@@ -259,9 +265,7 @@ export const ItemsPage: React.FC = () => {
     return (
       <motion.div
         style={{ maxWidth: '880px', margin: '0 auto' }}
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.88, ease: [0.16, 1, 0.3, 1] }}
+        {...dashTabMotion(prefersReducedMotion)}
       >
         {/* Top Editor Action Bar */}
         <div
@@ -390,9 +394,7 @@ export const ItemsPage: React.FC = () => {
         <form onSubmit={handleSaveItem}>
           <motion.div
             key={itemEditorTab}
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            {...dashSubTabMotion(prefersReducedMotion)}
             style={{
               ...surfaceCardStyle,
               borderRadius: '18px',
@@ -1475,9 +1477,7 @@ export const ItemsPage: React.FC = () => {
     <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
       <motion.div
         className="mp-items-toolbar"
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0)}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
           <button
@@ -1523,9 +1523,7 @@ export const ItemsPage: React.FC = () => {
 
       <motion.div
         className="mp-items-cats-bar"
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.88, delay: prefersReducedMotion ? 0 : 0.08, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0.08)}
       >
         <button
           type="button"
@@ -1587,9 +1585,7 @@ export const ItemsPage: React.FC = () => {
 
       <motion.div
         className="mp-items-list"
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.9, delay: prefersReducedMotion ? 0 : 0.14, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0.16)}
       >
         {displayItems.map((item) => {
           const catObj = allCategories.find((c) => c.id === item.cat);
@@ -1614,8 +1610,8 @@ export const ItemsPage: React.FC = () => {
                 border: isDragging ? '1.5px solid var(--brand)' : undefined,
                 boxShadow: isDragging ? '0 14px 32px rgba(0, 0, 0, 0.35)' : undefined,
                 transition: isDragging
-                  ? 'box-shadow 0.15s ease, border-color 0.15s ease'
-                  : 'transform 0.18s ease, opacity 0.15s ease',
+                  ? 'box-shadow 0.25s ease, border-color 0.25s ease'
+                  : 'transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.28s ease',
                 userSelect: draggingItemId ? 'none' : undefined,
               }}
             >
@@ -1822,9 +1818,7 @@ export const ItemsPage: React.FC = () => {
               aria-modal="true"
               aria-label={`توقيت توفر: ${scheduleModalItem.n}`}
               onClick={(e) => e.stopPropagation()}
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96, y: 8 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              {...dashModalMotion(prefersReducedMotion)}
               style={{
                 width: 'min(480px, 100%)',
                 maxHeight: 'calc(100dvh - 32px)',
@@ -1933,9 +1927,7 @@ export const ItemsPage: React.FC = () => {
               aria-modal="true"
               aria-label={terms.isStore ? 'إضافة منتجات سريعة بالجملة' : 'إضافة عناصر سريعة بالجملة'}
               onClick={(e) => e.stopPropagation()}
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96, y: 8 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              {...dashModalMotion(prefersReducedMotion)}
               style={{
                 width: 'min(480px, 100%)',
                 maxHeight: 'calc(100dvh - 32px)',

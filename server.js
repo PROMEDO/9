@@ -2,10 +2,10 @@
 import "dotenv/config";
 import crypto4 from "node:crypto";
 import express2 from "express";
+import compression from "compression";
 import fs5 from "node:fs";
 import path5 from "node:path";
 import { fileURLToPath } from "node:url";
-import zlib from "node:zlib";
 
 // server/neon-store.ts
 import fs from "node:fs";
@@ -7650,100 +7650,7 @@ app.use((req, _res, next) => {
 });
 app.use(express2.json({ limit: "15mb" }));
 app.use(express2.urlencoded({ extended: true, limit: "15mb" }));
-var COMPRESSIBLE_CONTENT_TYPE_RE = /^(text\/|application\/(?:json|javascript|ecmascript|xml|manifest\+json)|image\/svg\+xml)/i;
-app.use((req, res, next) => {
-  if (req.method === "HEAD") return next();
-  const acceptEncoding = String(req.headers["accept-encoding"] || "");
-  if (!/\bgzip\b/i.test(acceptEncoding)) return next();
-  const origWrite = res.write.bind(res);
-  const origEnd = res.end.bind(res);
-  let decided = false;
-  let gzipStream = null;
-  const canCompressResponse = () => {
-    if (res.statusCode < 200 || res.statusCode === 204 || res.statusCode === 304) return false;
-    if (res.getHeader("Content-Encoding")) return false;
-    const cacheControl = String(res.getHeader("Cache-Control") || "");
-    if (cacheControl.includes("no-transform")) return false;
-    const ct = String(res.getHeader("Content-Type") || "");
-    return COMPRESSIBLE_CONTENT_TYPE_RE.test(ct);
-  };
-  const enableGzipHeaders = () => {
-    res.removeHeader("Content-Length");
-    res.setHeader("Content-Encoding", "gzip");
-    const prevVary = String(res.getHeader("Vary") || "");
-    if (!/\baccept-encoding\b/i.test(prevVary)) {
-      res.setHeader("Vary", prevVary ? `${prevVary}, Accept-Encoding` : "Accept-Encoding");
-    }
-  };
-  const toBuffer = (chunk, encoding) => {
-    if (Buffer.isBuffer(chunk)) return chunk;
-    if (typeof chunk === "string") return Buffer.from(chunk, encoding || "utf8");
-    if (chunk instanceof Uint8Array) return Buffer.from(chunk);
-    return Buffer.from(String(chunk), encoding || "utf8");
-  };
-  res.write = function(chunk, encodingOrCb, cb) {
-    const encoding = typeof encodingOrCb === "string" ? encodingOrCb : void 0;
-    const callback = typeof encodingOrCb === "function" ? encodingOrCb : cb;
-    if (!decided) {
-      decided = true;
-      if (canCompressResponse()) {
-        enableGzipHeaders();
-        gzipStream = zlib.createGzip({ level: 6 });
-        gzipStream.on("data", (compressedChunk) => {
-          origWrite(compressedChunk);
-        });
-        gzipStream.on("error", () => {
-          gzipStream = null;
-        });
-      }
-    }
-    if (gzipStream) {
-      return gzipStream.write(chunk, encoding, callback);
-    }
-    return origWrite(chunk, encodingOrCb, cb);
-  };
-  res.end = function(chunkOrCb, encodingOrCb, cb) {
-    const hasChunk = chunkOrCb !== void 0 && chunkOrCb !== null && typeof chunkOrCb !== "function";
-    const encoding = typeof encodingOrCb === "string" ? encodingOrCb : void 0;
-    const callback = typeof chunkOrCb === "function" ? chunkOrCb : typeof encodingOrCb === "function" ? encodingOrCb : cb;
-    if (!decided) {
-      decided = true;
-      if (hasChunk && canCompressResponse()) {
-        const buf = toBuffer(chunkOrCb, encoding);
-        if (buf.length >= 1024) {
-          enableGzipHeaders();
-          zlib.gzip(buf, { level: 6 }, (err, compressed) => {
-            if (err || !compressed) {
-              origEnd(buf, callback);
-              return;
-            }
-            if (!res.headersSent) {
-              res.setHeader("Content-Length", String(compressed.length));
-            }
-            origEnd(compressed, callback);
-          });
-          return res;
-        }
-      }
-      return origEnd(chunkOrCb, encodingOrCb, cb);
-    }
-    if (gzipStream) {
-      const gs = gzipStream;
-      gzipStream = null;
-      gs.once("end", () => {
-        origEnd(callback);
-      });
-      if (hasChunk) {
-        gs.end(chunkOrCb, encoding);
-      } else {
-        gs.end();
-      }
-      return res;
-    }
-    return origEnd(chunkOrCb, encodingOrCb, cb);
-  };
-  next();
-});
+app.use(compression({ threshold: 1024 }));
 app.use((req, res, next) => {
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
@@ -9871,12 +9778,25 @@ async function startServer() {
         index: false
       })
     );
-    const cachedProdHtml = fs5.existsSync(indexHtmlPath) ? fs5.readFileSync(indexHtmlPath, "utf-8") : null;
+    let cachedProdHtml = null;
+    let cachedProdHtmlMtime = -1;
+    const readFreshProdHtml = () => {
+      try {
+        const st = fs5.statSync(indexHtmlPath);
+        if (!cachedProdHtml || st.mtimeMs !== cachedProdHtmlMtime) {
+          cachedProdHtml = fs5.readFileSync(indexHtmlPath, "utf-8");
+          cachedProdHtmlMtime = st.mtimeMs;
+        }
+        return cachedProdHtml;
+      } catch {
+        return cachedProdHtml;
+      }
+    };
     app.get("*", async (req, res, next) => {
       if (req.path.startsWith("/assets/") || ASSET_EXTENSION_RE.test(req.path)) {
         return res.status(404).end();
       }
-      const rawHtml = cachedProdHtml || (fs5.existsSync(indexHtmlPath) ? fs5.readFileSync(indexHtmlPath, "utf-8") : null);
+      const rawHtml = readFreshProdHtml();
       if (!rawHtml) {
         return res.status(500).send("Build output not found. Run npm run build first.");
       }

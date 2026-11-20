@@ -25,6 +25,11 @@ import {
   isAddonAllowedForPlan,
 } from '../../utils/plans';
 import { playBellTone, surfaceCardStyle, themedInputStyle, useDashboard } from './DashboardContext';
+import {
+  dashCardMotion,
+  dashModalMotion,
+  dashSectionMotion,
+} from '../../utils/dashboardMotion';
 
 function formatHourArabic(hour: number): string {
   const h = ((Math.floor(hour) % 24) + 24) % 24;
@@ -96,9 +101,7 @@ export const AddonsPage: React.FC = () => {
     <div style={{ maxWidth: '1120px', margin: '0 auto' }}>
       <motion.div
         className="mp-items-toolbar"
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        {...dashSectionMotion(prefersReducedMotion, 0)}
         style={{ justifyContent: 'flex-end', flexWrap: 'wrap', gap: '10px' }}
       >
         <div
@@ -126,13 +129,7 @@ export const AddonsPage: React.FC = () => {
             <motion.div
               key={addon.key}
               className={`mp-addon-square-card ${isEnabled ? 'is-enabled' : ''} ${!allowed ? 'is-locked' : ''}`}
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: allowed ? 1 : 0.72, y: 0 }}
-              transition={{
-                duration: 0.3,
-                delay: prefersReducedMotion ? 0 : Math.min((idx % 8) * 0.03, 0.2),
-                ease: [0.16, 1, 0.3, 1],
-              }}
+              {...dashCardMotion(prefersReducedMotion, idx % 8, allowed ? 1 : 0.72, false, 0.06)}
             >
               {/* Top Row: Icon + Status Pill */}
               <div className="mp-addon-card-head">
@@ -207,9 +204,7 @@ export const AddonsPage: React.FC = () => {
           <motion.div
             className="mp-addon-modal-card"
             onClick={(e) => e.stopPropagation()}
-            initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.96, y: 8 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            {...dashModalMotion(prefersReducedMotion)}
             style={surfaceCardStyle}
           >
             <form onSubmit={handleSaveAddonEdit} className="mp-addon-modal-form" noValidate>
@@ -1235,9 +1230,7 @@ export const AddonsPage: React.FC = () => {
           >
             <motion.div
               onClick={(e) => e.stopPropagation()}
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              {...dashModalMotion(prefersReducedMotion)}
               style={{
                 position: 'relative',
                 width: 'min(410px, 92vw)',

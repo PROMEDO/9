@@ -14,6 +14,10 @@ export type MenuLayout =
 
 export type MenuThemeShape =
   | 'modern'
+  | 'silk'
+  | 'editorial'
+  | 'velvet'
+  | 'luxe'
   | 'toters'
   | 'estore'
   | 'glass'
