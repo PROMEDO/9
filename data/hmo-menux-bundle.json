@@ -1,0 +1,2667 @@
+{
+  "targetPhones": [
+    "07722213811",
+    "9647722213811"
+  ],
+  "defaultAccount": {
+    "id": "acc_hmo_07722213811",
+    "username": "07722213811",
+    "em": "07722213811",
+    "e": "07722213811",
+    "phone": "07722213811",
+    "projectPhone": "+9647722213811",
+    "projectName": "حمو – Hmo",
+    "projectType": "restaurant",
+    "n": "محمد",
+    "pw": "$scrypt$928f0ffcc6970103c1de529bfa8f5b83$e049e2471ac41dc87522108838e4592ac04519258afa10b013ff863c13245961f62ac4e0f1a98401109fc503061bf2757a2ceedb8332a76dda26ab87a83a8480",
+    "rid": "r_hmo_menux",
+    "r": "partner",
+    "admin": false,
+    "active": true,
+    "verifiedPhone": true,
+    "at": "2026-11-14",
+    "created": "2026-11-14",
+    "authMethod": "manual"
+  },
+  "restaurant": {
+    "id": "r_hmo_menux",
+    "n": "حمو – Hmo",
+    "ow": "محمد",
+    "ph": "+9647722213811",
+    "slug": "hmo",
+    "projectType": "restaurant",
+    "country": "العراق",
+    "region": "البصرة - حي المهندسين",
+    "currency": "د.ع",
+    "language": "ar",
+    "p": "باقة الاعمال الشاملة",
+    "planId": "vip",
+    "isPaid": true,
+    "e": "2026-12-14",
+    "a": 1,
+    "o": 0,
+    "v": 0,
+    "done": 1,
+    "lay": "list",
+    "themeMode": "light",
+    "themePreset": "clean-light",
+    "color": "#074942",
+    "logo": "/uploads/hmo/logo.jpg",
+    "coverImages": [
+      "/uploads/hmo/cover_1.png",
+      "/uploads/hmo/cover_2.png",
+      "/uploads/hmo/cover_3.png",
+      "/uploads/hmo/cover_4.png",
+      "/uploads/hmo/cover_5.jpeg"
+    ],
+    "aboutText": "مطعم ومقهى حمو (Hmo) – البصرة، حي المهندسين. نقدم أشهى أنواع الريزو، البرجر، الستربس، السندويشات، الشاورما، البيتزا، البوكسات، المشويات، المقبلات، العصائر والموهيتو، الكريب والوافل والبان كيك والأراكيل.",
+    "mapUrl": "https://maps.app.goo.gl/Kvk8SWTzrfPmnhXr6",
+    "h": {
+      "m": "c",
+      "f": "11:00",
+      "t": "02:30"
+    },
+    "weeklyHours": {
+      "sat": {
+        "open": true,
+        "from": "11:00",
+        "to": "02:30"
+      },
+      "sun": {
+        "open": true,
+        "from": "11:00",
+        "to": "02:30"
+      },
+      "mon": {
+        "open": true,
+        "from": "11:00",
+        "to": "02:30"
+      },
+      "tue": {
+        "open": true,
+        "from": "11:00",
+        "to": "02:30"
+      },
+      "wed": {
+        "open": true,
+        "from": "11:00",
+        "to": "02:30"
+      },
+      "thu": {
+        "open": true,
+        "from": "11:00",
+        "to": "02:30"
+      },
+      "fri": {
+        "open": true,
+        "from": "11:00",
+        "to": "02:30"
+      }
+    },
+    "acceptOrdersWhenClosed": true,
+    "enabledOrderTypes": {
+      "delivery": true,
+      "pickup": true,
+      "table": true
+    },
+    "deliveryZones": [
+      {
+        "name": "البصرة",
+        "cities": [
+          {
+            "name": "حي المهندسين",
+            "fee": 1000,
+            "eta": "40 دقيقة"
+          },
+          {
+            "name": "حي الجامعة",
+            "fee": 1000,
+            "eta": "40 دقيقة"
+          },
+          {
+            "name": "حي المركز",
+            "fee": 1000,
+            "eta": "40 دقيقة"
+          },
+          {
+            "name": "حي القائم",
+            "fee": 1000,
+            "eta": "40 دقيقة"
+          },
+          {
+            "name": "حي بغداد",
+            "fee": 2000,
+            "eta": "45 دقيقة"
+          },
+          {
+            "name": "الجمعيات",
+            "fee": 3000,
+            "eta": "50 دقيقة"
+          },
+          {
+            "name": "الأمن الداخلي",
+            "fee": 3000,
+            "eta": "50 دقيقة"
+          },
+          {
+            "name": "حي الحسين",
+            "fee": 3000,
+            "eta": "50 دقيقة"
+          },
+          {
+            "name": "مدينة الامل",
+            "fee": 3000,
+            "eta": "50 دقيقة"
+          },
+          {
+            "name": "مناطق اخرى",
+            "fee": 4000,
+            "eta": "60 دقيقة"
+          }
+        ]
+      }
+    ],
+    "healthNotices": [
+      "يحتاج البالغين الى 2000 سعرة حرارية يومياً وتختلف الاحتياجات الفردية من السعرات الحرارية من شخص الى آخر.",
+      "يجب الا يتجاوز استهلاك الفرد البالغ من السكر المضاف اكثر من (50) غرام باليوم أي ما يعادل 12 ملعقة صغيرة من السكر.",
+      "يحتاج الأطفال من عمر 9 الى 13 سنة (1200-1500) سعرة حرارية يومياً وتختلف الاحتياجات الفردية من السعرات.",
+      "يجب الا يتجاوز استهلاك الاطفال من السكر المضاف اكثر من (25) غرام باليوم أي ما يعادل 6 ملعقة صغيرة من السكر.",
+      "يجب الا يتجاوز استهلاك الفرد من الملح عن 5 غرام يومياً ما يعادل 2000 مليغرام صوديوم.",
+      "يحق للمستهلك طلب عدم اضافة السكر في الخلطات والمشروبات.",
+      "يجب الا يتجاوز استهلاك الفرد البالغ من الكافيين اكثر من (400) مليغرام."
+    ],
+    "social": {
+      "instagram": "https://www.instagram.com/hmo.basra/",
+      "tiktok": "https://www.tiktok.com/@hmo.basra",
+      "whatsapp": "9647722213811"
+    },
+    "createdAt": "2026-11-14",
+    "subdomain": "hmo"
+  },
+  "cats": [
+    {
+      "id": "cat_hmom_01",
+      "rid": "r_hmo_menux",
+      "n": "الريزو",
+      "emoji": "🍛",
+      "o": 1,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_02",
+      "rid": "r_hmo_menux",
+      "n": "البرجر",
+      "emoji": "🍔",
+      "o": 2,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_03",
+      "rid": "r_hmo_menux",
+      "n": "الستربس",
+      "emoji": "🍗",
+      "o": 3,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_04",
+      "rid": "r_hmo_menux",
+      "n": "السندويشات",
+      "emoji": "🥪",
+      "o": 4,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_05",
+      "rid": "r_hmo_menux",
+      "n": "الشاورما",
+      "emoji": "🌯",
+      "o": 5,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_06",
+      "rid": "r_hmo_menux",
+      "n": "البيتزا",
+      "emoji": "🍕",
+      "o": 6,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_07",
+      "rid": "r_hmo_menux",
+      "n": "البوكسات",
+      "emoji": "📦",
+      "o": 7,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_08",
+      "rid": "r_hmo_menux",
+      "n": "البطاطا",
+      "emoji": "🍟",
+      "o": 8,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_09",
+      "rid": "r_hmo_menux",
+      "n": "الشرقي",
+      "emoji": "🍖",
+      "o": 9,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_10",
+      "rid": "r_hmo_menux",
+      "n": "المشويات",
+      "emoji": "🔥",
+      "o": 10,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_11",
+      "rid": "r_hmo_menux",
+      "n": "الاجنحة",
+      "emoji": "🍗",
+      "o": 11,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_12",
+      "rid": "r_hmo_menux",
+      "n": "الصوصات",
+      "emoji": "🥣",
+      "o": 12,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_13",
+      "rid": "r_hmo_menux",
+      "n": "المقبلات",
+      "emoji": "🥗",
+      "o": 13,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_14",
+      "rid": "r_hmo_menux",
+      "n": "المشروبات الباردة",
+      "emoji": "🥤",
+      "o": 14,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_15",
+      "rid": "r_hmo_menux",
+      "n": "المشروبات الساخنة",
+      "emoji": "☕",
+      "o": 15,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_16",
+      "rid": "r_hmo_menux",
+      "n": "الموهيتو",
+      "emoji": "🍹",
+      "o": 16,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_17",
+      "rid": "r_hmo_menux",
+      "n": "الميلك شيك",
+      "emoji": "🥛",
+      "o": 17,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_18",
+      "rid": "r_hmo_menux",
+      "n": "الكريب / الوافل / البان كيك",
+      "emoji": "🧇",
+      "o": 18,
+      "published": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "cat_hmom_19",
+      "rid": "r_hmo_menux",
+      "n": "الاراكيل",
+      "emoji": "💨",
+      "o": 19,
+      "published": true,
+      "date": "2026-11-14"
+    }
+  ],
+  "items": [
+    {
+      "id": "itm_hmom_001",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_01",
+      "n": "ريزو",
+      "d": "قطع الدجاج المقرمشة - رز - صوص من اختيارك - بيبسي",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_001.jpg",
+      "choices": [
+        {
+          "n": "ريزو عادي"
+        },
+        {
+          "n": "ريزو سبايسي"
+        },
+        {
+          "n": "ريزو ميكس"
+        },
+        {
+          "n": "ريزو باربكيو"
+        }
+      ],
+      "maxChoices": 1,
+      "prepTime": "25 دقيقة",
+      "badges": [
+        {
+          "type": "red",
+          "text": "الأكثر طلباً"
+        }
+      ],
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_002",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_01",
+      "n": "ريزو شاورما",
+      "d": "شاورما دجاج - رز - صوص حمو الخاص - بيبسي",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_002.jpg",
+      "choices": [
+        {
+          "n": "شاورما دجاج"
+        },
+        {
+          "n": "شاورما لحم"
+        }
+      ],
+      "maxChoices": 1,
+      "prepTime": "25 دقيقة",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_003",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_01",
+      "n": "ريزو هني ماسترد",
+      "d": "قطع الدجاج المقرمشة - رز - صوص هني ماسترد - بيبسي",
+      "pr": 7000,
+      "img": "/uploads/hmo/item_003.jpg",
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_004",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_01",
+      "n": "كرانشي ريزو",
+      "d": "بدون ببسي",
+      "pr": 7000,
+      "img": "/uploads/hmo/item_004.jpeg",
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_005",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "برجر لحم كلاسيك",
+      "d": "قطعة لحم - خس - طماطم - كبيس -صوص مميز",
+      "pr": 3000,
+      "img": "/uploads/hmo/item_005.jpg",
+      "extras": [
+        {
+          "n": "اجعلها وجبة, بطاطا مقلية و بيبسي",
+          "pr": 2000,
+          "p": 2000
+        }
+      ],
+      "prepTime": "25 دقيقة",
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_006",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "برجر دجاج كلاسيك",
+      "d": "قطعة برجر دجاج - خس - طماطم - كبيس - صوص مميز",
+      "pr": 3000,
+      "img": "/uploads/hmo/item_006.png",
+      "extras": [
+        {
+          "n": "اجعلها وجبة, بطاطا مقلية و بيبسي",
+          "pr": 2000,
+          "p": 2000
+        }
+      ],
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_007",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "برجر كريسبي",
+      "pr": 3000,
+      "img": "/uploads/hmo/item_007.jpg",
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_008",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "تشيز برجر",
+      "d": "قطعة لحم - جبن - خس - طماطم - كبيس - صوص مميز",
+      "pr": 4000,
+      "img": "/uploads/hmo/item_008.jpg",
+      "extras": [
+        {
+          "n": "اجعلها وجبة, بطاطا مقلية و بيبسي",
+          "pr": 2000,
+          "p": 2000
+        }
+      ],
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_009",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "تشيكن فيليه",
+      "d": "قطعة دجاج مقرمش - كبيس - مايونيزز - خس - جبن شيدر",
+      "pr": 4000,
+      "img": "/uploads/hmo/item_007.jpg",
+      "extras": [
+        {
+          "n": "اجعلها وجبة, بطاطا مقلية و بيبسي",
+          "pr": 2000,
+          "p": 2000
+        }
+      ],
+      "prepTime": "25 دقيقة",
+      "o": 5,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_010",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "كرانشي برجر",
+      "d": "قطعة لحم - شريحة جبن - جبن شيدر - خس - بصل - طماطم - صوص تكساس",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_010.jpg",
+      "extras": [
+        {
+          "n": "اجعلها وجبة, بطاطا مقلية و بيبسي",
+          "pr": 2000,
+          "p": 2000
+        }
+      ],
+      "o": 6,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_011",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "مشروم برجر",
+      "d": "قطعة لحم - فطر - جبن شيدر - جبن موزريلا - صوص مميز",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_011.png",
+      "extras": [
+        {
+          "n": "اجعلها وجبة, بطاطا مقلية و بيبسي",
+          "pr": 2000,
+          "p": 2000
+        }
+      ],
+      "prepTime": "25 دقيقة",
+      "o": 7,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_012",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "تريبل زنجر",
+      "d": "صمون برجر محمص بالزبدة وثلاثة قطع كريسبي وشريحة جبن و مخلل وخس ومايونين وجبن شيدر وكرانشي",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_012.jpeg",
+      "o": 8,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_013",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "باربكيو برجر",
+      "d": "صمون برجر محمص بالزبدة وقطعتين لحم 100 غرام وجبن شيدر وصوص باربكيو",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_013.jpg",
+      "o": 9,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_014",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_02",
+      "n": "بركان برجر",
+      "d": "صمون برجر محمص بالزبدة مع قطعين لحم 100 غرام وكرانشي وجبن شيدر",
+      "pr": 8000,
+      "img": "/uploads/hmo/item_014.jpg",
+      "o": 10,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_015",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_03",
+      "n": "الكرسبي",
+      "d": "قطع الكرسبي المحدده - فنكر - كولسلو - ثومية - صوص سبايسي - صوص كلاسك",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_015.jpg",
+      "sizes": [
+        {
+          "n": "3 قطع",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "4 قطع",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "5 قطع",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "10 قطع",
+          "pr": 13000,
+          "p": 13000
+        }
+      ],
+      "prepTime": "25 دقيقة",
+      "badges": [
+        {
+          "type": "red",
+          "text": "الأكثر طلباً"
+        }
+      ],
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_016",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_04",
+      "n": "ساندويج كرسبي بالصمون الفرنسي",
+      "d": "صمون فرنسي - قطع كرسبي - خس - جبن شيدر - صوص مميز - كبيس",
+      "pr": 3500,
+      "img": "/uploads/hmo/item_016.jpg",
+      "prepTime": "25 دقيقة",
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_017",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_04",
+      "n": "فاهيتا دجاج",
+      "d": "صمون فرنسي - دجاج - جبن فرنسي - فلفل بارد - بصل - فطر",
+      "pr": 3500,
+      "img": "/uploads/hmo/item_017.jpg",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_018",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_04",
+      "n": "كلاسيك تويستر",
+      "d": "خبز التورتيلا - قطع كرسبي - كولسلو - فنكر - خس صوص",
+      "pr": 3500,
+      "img": "/uploads/hmo/item_018.jpg",
+      "extras": [
+        {
+          "n": "اجعلها وجبة, بطاطا مقلية و بيبسي",
+          "pr": 2000,
+          "p": 2000
+        }
+      ],
+      "prepTime": "25 دقيقة",
+      "badges": [
+        {
+          "type": "red",
+          "text": "الأكثر طلباً"
+        }
+      ],
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_019",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_04",
+      "n": "ماستر تويستر",
+      "d": "خبز التورتيلا - قطع كرسبي - كولسلو - فنكر - خس - صوص ماستر",
+      "pr": 4000,
+      "img": "/uploads/hmo/item_019.jpg",
+      "extras": [
+        {
+          "n": "اجعلها وجبة, بطاطا مقلية و بيبسي",
+          "pr": 2000,
+          "p": 2000
+        }
+      ],
+      "prepTime": "25 دقيقة",
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_020",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_04",
+      "n": "صارووخ تويستر 🚀",
+      "d": "خبز التورتيلا XXL - قطع كريسبي - كولسلو - خس - فنكر - جبن شيدر - صوص خاص",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_020.jpeg",
+      "prepTime": "25 دقيقة",
+      "o": 5,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_021",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "صاج شاورما لحم",
+      "d": "خبز التورتيلا - شاورما لحم - طحينية - طماطم - كبيس - خضروات",
+      "pr": 3000,
+      "img": "/uploads/hmo/item_021.jpg",
+      "prepTime": "25 دقيقة",
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_022",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "صاج شاورما دجاج",
+      "d": "خبز التورتيلا - شاورما دجاج - ثومية - كبيس - خضروات",
+      "pr": 3000,
+      "img": "/uploads/hmo/item_022.jpg",
+      "prepTime": "25 دقيقة",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_023",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "ساندويج شاورما لحم بالصمون العراقي",
+      "d": "صمون حجري - شاورما لحم - طحينية - مخلل - طماطم - خضروات",
+      "pr": 2500,
+      "img": "/uploads/hmo/item_023.jpg",
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_024",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "ساندويج شاورما دجاج بالصمون العراقي",
+      "d": "صمون حجري - شاورما دجاج - ثومية - مخلل - خضروات",
+      "pr": 2500,
+      "img": "/uploads/hmo/item_024.jpg",
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_025",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "ساندويج شاورما لحم بالصمون الفرنسي",
+      "d": "صمون فرنسي - شاورما لحم - طحينية - طماطم - كبيس - خضروات",
+      "pr": 2500,
+      "img": "/uploads/hmo/item_025.jpg",
+      "prepTime": "25 دقيقة",
+      "o": 5,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_026",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "ساندويج شاورما دجاج بالصمون الفرنسي",
+      "d": "صمون فرنسي - شاورما دجاج - ثومية - كبيس",
+      "pr": 2500,
+      "img": "/uploads/hmo/item_026.jpg",
+      "prepTime": "25 دقيقة",
+      "o": 6,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_027",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "وجبة شاورما لحم",
+      "d": "صاج شاورما لحم - فنكر - طحينية - صوص سبايسي",
+      "pr": 4000,
+      "img": "/uploads/hmo/item_027.jpg",
+      "sizes": [
+        {
+          "n": "وجبة عادية",
+          "pr": 4000,
+          "p": 4000
+        },
+        {
+          "n": "وجبة جامبو",
+          "pr": 7000,
+          "p": 7000
+        }
+      ],
+      "prepTime": "25 دقيقة",
+      "o": 7,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_028",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "وجبة شاورما دجاج",
+      "d": "صاج شاورما دجاج - فنكر - ثومية - صوص سبايسي",
+      "pr": 4000,
+      "img": "/uploads/hmo/item_028.jpg",
+      "sizes": [
+        {
+          "n": "وجبة عادية",
+          "pr": 4000,
+          "p": 4000
+        },
+        {
+          "n": "وجبة جامبو",
+          "pr": 7000,
+          "p": 7000
+        }
+      ],
+      "prepTime": "25 دقيقة",
+      "o": 8,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_029",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "صاج ايطالي شاورما لحم",
+      "d": "عجينة بيتزا - شاورما لحم - فنكر",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_029.jpg",
+      "sizes": [
+        {
+          "n": "وسط",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "كبير",
+          "pr": 8000,
+          "p": 8000
+        }
+      ],
+      "prepTime": "35 دقيقة",
+      "o": 9,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_030",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "صاج ايطالي شاورما دجاج",
+      "d": "عجينة بيتزا - شاورما دجاج - فنكر",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_030.jpg",
+      "sizes": [
+        {
+          "n": "وسط",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "كبير",
+          "pr": 8000,
+          "p": 8000
+        }
+      ],
+      "prepTime": "35 دقيقة",
+      "o": 10,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_031",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "شاورما لحم وزن",
+      "pr": 8000,
+      "img": "/uploads/hmo/item_031.jpg",
+      "sizes": [
+        {
+          "n": "ربع كيلو",
+          "pr": 8000,
+          "p": 8000
+        },
+        {
+          "n": "نصف كيلو",
+          "pr": 20000,
+          "p": 20000
+        },
+        {
+          "n": "كيلو كامل",
+          "pr": 35000,
+          "p": 35000
+        }
+      ],
+      "o": 11,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_032",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_05",
+      "n": "شاورما دجاج وزن",
+      "pr": 7000,
+      "img": "/uploads/hmo/item_032.jpg",
+      "sizes": [
+        {
+          "n": "ربع كيلو",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "نصف كيلو",
+          "pr": 15000,
+          "p": 15000
+        },
+        {
+          "n": "كيلو كامل",
+          "pr": 25000,
+          "p": 25000
+        }
+      ],
+      "o": 12,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_033",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_06",
+      "n": "بيتزا مارغيريتا",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_033.png",
+      "sizes": [
+        {
+          "n": "صغير",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "وسط",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "كبير",
+          "pr": 9000,
+          "p": 9000
+        }
+      ],
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_034",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_06",
+      "n": "بيتزا خضار",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_034.png",
+      "sizes": [
+        {
+          "n": "صغير",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "وسط",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "كبير",
+          "pr": 10000,
+          "p": 10000
+        }
+      ],
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_035",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_06",
+      "n": "بيتزا بافلو",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_035.jpg",
+      "sizes": [
+        {
+          "n": "صغير",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "وسط",
+          "pr": 8000,
+          "p": 8000
+        },
+        {
+          "n": "كبير",
+          "pr": 10000,
+          "p": 10000
+        }
+      ],
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_036",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_06",
+      "n": "بيتزا دجاج باربكيو",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_036.png",
+      "sizes": [
+        {
+          "n": "صغير",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "وسط",
+          "pr": 8000,
+          "p": 8000
+        },
+        {
+          "n": "كبير",
+          "pr": 10000,
+          "p": 10000
+        }
+      ],
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_037",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_06",
+      "n": "بيتزا شاورما دجاج",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_037.jpg",
+      "sizes": [
+        {
+          "n": "صغير",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "وسط",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "كبير",
+          "pr": 10000,
+          "p": 10000
+        }
+      ],
+      "o": 5,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_038",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_06",
+      "n": "بيتزا شاورما لحم",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_038.png",
+      "sizes": [
+        {
+          "n": "صغير",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "وسط",
+          "pr": 8000,
+          "p": 8000
+        },
+        {
+          "n": "كبير",
+          "pr": 12000,
+          "p": 12000
+        }
+      ],
+      "o": 6,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_039",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_06",
+      "n": "بيتزا ببروني",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_039.jpg",
+      "sizes": [
+        {
+          "n": "صغير",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "وسط",
+          "pr": 8000,
+          "p": 8000
+        },
+        {
+          "n": "كبير",
+          "pr": 11000,
+          "p": 11000
+        }
+      ],
+      "o": 7,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_040",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_06",
+      "n": "بيتزا ميكس حمو",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_040.png",
+      "sizes": [
+        {
+          "n": "صغير",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "وسط",
+          "pr": 8000,
+          "p": 8000
+        },
+        {
+          "n": "كبير",
+          "pr": 12000,
+          "p": 12000
+        }
+      ],
+      "o": 8,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_041",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_07",
+      "n": "بوكس اللمّه",
+      "d": "بوم زنجر - بوم برجر لحم - تشيكن فيليه دبل - ريزو حمو - تشكن فرايز ميكس - بطاطا مقليه",
+      "pr": 20000,
+      "img": "/uploads/hmo/item_041.jpeg",
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_042",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_07",
+      "n": "وجبة كريسبي رول",
+      "d": "قطعتين كريسبي رول مقطعه تقدم مع بطاطا مقلية وصوصين",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_042.jpeg",
+      "extras": [
+        {
+          "n": "ببيبسي",
+          "pr": 500,
+          "p": 500
+        }
+      ],
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_043",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_07",
+      "n": "تويستر كومبو",
+      "d": "تويستر - صوص - بطاطا مقلية - بيبسي",
+      "pr": 5500,
+      "img": "/uploads/hmo/item_043.png",
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_044",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_08",
+      "n": "بطاطا",
+      "pr": 1500,
+      "img": "/uploads/hmo/item_044.jpg",
+      "sizes": [
+        {
+          "n": "صفير",
+          "pr": 1500,
+          "p": 1500
+        },
+        {
+          "n": "كبير",
+          "pr": 3000,
+          "p": 3000
+        }
+      ],
+      "prepTime": "10 دقيقة",
+      "badges": [
+        {
+          "type": "red",
+          "text": "الأكثر طلباً"
+        }
+      ],
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_045",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_08",
+      "n": "بطاطا بالجبن",
+      "pr": 2000,
+      "img": "/uploads/hmo/item_045.jpg",
+      "sizes": [
+        {
+          "n": "صغير",
+          "pr": 2000,
+          "p": 2000
+        },
+        {
+          "n": "كبير",
+          "pr": 4000,
+          "p": 4000
+        }
+      ],
+      "prepTime": "10 دقيقة",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_046",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_08",
+      "n": "تشيكن فرايز",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_046.jpg",
+      "prepTime": "25 دقيقة",
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_047",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_08",
+      "n": "كرانشي تشيكن فرايز",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_047.jpg",
+      "o": 4,
+      "published": true,
+      "available": false,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_048",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_08",
+      "n": "شاورما لحم فرايز",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_048.jpeg",
+      "o": 5,
+      "published": true,
+      "available": false,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_049",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_08",
+      "n": "شاورما دجاج فرايز",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_049.jpeg",
+      "o": 6,
+      "published": true,
+      "available": false,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_050",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_09",
+      "n": "تمن ومرق",
+      "pr": 3500,
+      "img": "/uploads/hmo/item_050.png",
+      "prepTime": "30 دقيقة",
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_051",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_09",
+      "n": "مندي دجاج",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_051.jpeg",
+      "sizes": [
+        {
+          "n": "ربع دجاجة",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "نصف دجاجة",
+          "pr": 9000,
+          "p": 9000
+        },
+        {
+          "n": "دجاجة كاملة",
+          "pr": 15000,
+          "p": 15000
+        }
+      ],
+      "prepTime": "30 دقيقة",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_052",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_09",
+      "n": "قوزي",
+      "d": "لحمنا هو لحم غنم عراقي ذبح بالذمة",
+      "pr": 25000,
+      "img": "/uploads/hmo/item_052.png",
+      "sizes": [
+        {
+          "n": "نصف",
+          "pr": 25000,
+          "p": 25000
+        },
+        {
+          "n": "كامل",
+          "pr": 35000,
+          "p": 35000
+        }
+      ],
+      "prepTime": "30 دقيقة",
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_053",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_09",
+      "n": "مطبگ دجاج",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_053.jpeg",
+      "sizes": [
+        {
+          "n": "نفر مطبك دجاج",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "نصف دجاجة مطبك",
+          "pr": 10000,
+          "p": 10000
+        },
+        {
+          "n": "دجاجة كاملة مطبك",
+          "pr": 20000,
+          "p": 20000
+        }
+      ],
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_054",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_10",
+      "n": "طبق تكه لحم",
+      "d": "شيشين تكه لحم",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_054.jpg",
+      "prepTime": "35 دقيقة",
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_055",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_10",
+      "n": "طبق تكه دجاج",
+      "d": "شيشين تكه دجاج",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_055.jpg",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_056",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_10",
+      "n": "طبق كباب لحم",
+      "d": "شيشين كباب لحم",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_056.jpg",
+      "prepTime": "35 دقيقة",
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_057",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_10",
+      "n": "طبق كباب دجاج",
+      "d": "شيشين كباب دجاج",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_057.jpg",
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_058",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_10",
+      "n": "صينية مشكل وسط",
+      "d": "3 كباب دجاج - 3 كباب لحم - 3 قطع اجنحه - 2 تكه دجاج - شاورمـــــا دجـــــــــــاج",
+      "pr": 25000,
+      "img": "/uploads/hmo/item_058.jpg",
+      "prepTime": "35 دقيقة",
+      "o": 5,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_059",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_10",
+      "n": "صينية مشكل كبيرة",
+      "d": "5 كباب دجاج - 5 كباب لحم - 5 قطع اجنحه - 3 تكه دجاج - شاورما دجاج ولحم",
+      "pr": 40000,
+      "img": "/uploads/hmo/item_059.jpg",
+      "o": 6,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_060",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_10",
+      "n": "كباب لحم وزن",
+      "pr": 7000,
+      "img": "/uploads/hmo/item_060.jpg",
+      "sizes": [
+        {
+          "n": "ربع كيلو",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "نصف كيلو",
+          "pr": 14000,
+          "p": 14000
+        },
+        {
+          "n": "كيلو كامل",
+          "pr": 25000,
+          "p": 25000
+        }
+      ],
+      "prepTime": "35 دقيقة",
+      "o": 7,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_061",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_10",
+      "n": "كباب دجاج وزن",
+      "pr": 7000,
+      "img": "/uploads/hmo/item_061.jpg",
+      "sizes": [
+        {
+          "n": "ربع كيلو",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "نصف كيلو",
+          "pr": 12000,
+          "p": 12000
+        },
+        {
+          "n": "كيلو كامل",
+          "pr": 20000,
+          "p": 20000
+        }
+      ],
+      "prepTime": "35 دقيقة",
+      "o": 8,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_062",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_10",
+      "n": "تكه دجاج وزن",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_062.jpg",
+      "sizes": [
+        {
+          "n": "ربع كيلو",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "نصف كيلو",
+          "pr": 12000,
+          "p": 12000
+        },
+        {
+          "n": "كيلو كامل",
+          "pr": 20000,
+          "p": 20000
+        }
+      ],
+      "prepTime": "35 دقيقة",
+      "o": 9,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_063",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_11",
+      "n": "اجنحه دجاج",
+      "d": "5 قطع اجنحة من اختيارك",
+      "pr": 6500,
+      "img": "/uploads/hmo/item_063.jpeg",
+      "sizes": [
+        {
+          "n": "اجنحة مشوية على الفحم",
+          "pr": 6500,
+          "p": 6500
+        },
+        {
+          "n": "اجنحة مقرمشة باربكيو",
+          "pr": 6500,
+          "p": 6500
+        },
+        {
+          "n": "اجنحة مقرمشة بافلو سبايسي",
+          "pr": 6500,
+          "p": 6500
+        },
+        {
+          "n": "اجنحة هني ماسترد",
+          "pr": 6500,
+          "p": 6500
+        }
+      ],
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_064",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص كولسلو",
+      "pr": 500,
+      "img": "/uploads/hmo/item_064.jpg",
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_065",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص ثوميه",
+      "pr": 500,
+      "img": "/uploads/hmo/item_065.jpg",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_066",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص طحينيه",
+      "pr": 500,
+      "img": "/uploads/hmo/item_066.jpg",
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_067",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص ريزو",
+      "pr": 500,
+      "img": "/uploads/hmo/item_067.jpg",
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_068",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص سبايسي",
+      "pr": 500,
+      "img": "/uploads/hmo/item_068.jpg",
+      "o": 5,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_069",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص باربكيو",
+      "pr": 500,
+      "img": "/uploads/hmo/item_069.jpg",
+      "o": 6,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_070",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص بافلو",
+      "pr": 1000,
+      "img": "/uploads/hmo/item_070.jpg",
+      "o": 7,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_071",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص هني ماسترد",
+      "pr": 1000,
+      "img": "/uploads/hmo/item_071.jpg",
+      "o": 8,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_072",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص تكساس",
+      "pr": 1000,
+      "img": "/uploads/hmo/item_072.jpg",
+      "o": 9,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_073",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_12",
+      "n": "صوص جبن شيدر",
+      "pr": 1000,
+      "img": "/uploads/hmo/item_073.jpg",
+      "o": 10,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_074",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_13",
+      "n": "حمص",
+      "pr": 2500,
+      "img": "/uploads/hmo/item_074.jpg",
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_075",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_13",
+      "n": "حمص بالشاورما",
+      "pr": 3500,
+      "img": "/uploads/hmo/item_075.jpg",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_076",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_13",
+      "n": "اورديف مقبلات صغير",
+      "d": "خيار واحد فقط",
+      "pr": 2500,
+      "img": "/uploads/hmo/item_076.jpg",
+      "choices": [
+        {
+          "n": "حمص"
+        },
+        {
+          "n": "متبل باذنجان"
+        },
+        {
+          "n": "باذنجانية"
+        },
+        {
+          "n": "تبولة"
+        },
+        {
+          "n": "كولسلو"
+        },
+        {
+          "n": "فتوش"
+        },
+        {
+          "n": "جاجيك"
+        }
+      ],
+      "maxChoices": 1,
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_077",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_13",
+      "n": "اورديف مقبلات وسط",
+      "d": "4 خيارات",
+      "pr": 3500,
+      "img": "/uploads/hmo/item_077.jpg",
+      "choices": [
+        {
+          "n": "حمص"
+        },
+        {
+          "n": "جاجيك"
+        },
+        {
+          "n": "متبل باذنجان"
+        },
+        {
+          "n": "باذنجانية"
+        },
+        {
+          "n": "تبولة"
+        },
+        {
+          "n": "كولسلو"
+        },
+        {
+          "n": "فتوش"
+        }
+      ],
+      "maxChoices": 4,
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_078",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_13",
+      "n": "اورديف مقبلات كبير",
+      "d": "5 خيارات",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_078.jpg",
+      "choices": [
+        {
+          "n": "حمص"
+        },
+        {
+          "n": "جاجيك"
+        },
+        {
+          "n": "متبل باذنجان"
+        },
+        {
+          "n": "باذنجانية"
+        },
+        {
+          "n": "تبولة"
+        },
+        {
+          "n": "كولسلو"
+        },
+        {
+          "n": "فتوش"
+        }
+      ],
+      "maxChoices": 5,
+      "o": 5,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_079",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_13",
+      "n": "سلطة سيزر",
+      "d": "خس - توست محمص - دجاج - جبن بارميزان - صوص سيزر",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_079.jpg",
+      "prepTime": "30 دقيقة",
+      "o": 6,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_080",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_13",
+      "n": "فتوش",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_080.jpg",
+      "o": 7,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_081",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_13",
+      "n": "سلطة حمو",
+      "d": "سموك دجاج - خس - رز - جراند صوص",
+      "pr": 7000,
+      "img": "/uploads/hmo/item_081.jpg",
+      "prepTime": "30 دقيقة",
+      "o": 8,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_082",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_14",
+      "n": "بيبسي",
+      "pr": 500,
+      "img": "/uploads/hmo/item_082.png",
+      "badges": [
+        {
+          "type": "red",
+          "text": "الأكثر طلباً"
+        }
+      ],
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_083",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_14",
+      "n": "ماء",
+      "pr": 500,
+      "img": "/uploads/hmo/item_083.png",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_084",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_15",
+      "n": "مشروب ساخن من اختيارك",
+      "pr": 1000,
+      "img": "/uploads/hmo/item_084.jpg",
+      "sizes": [
+        {
+          "n": "شاي",
+          "pr": 1000,
+          "p": 1000
+        },
+        {
+          "n": "شاي بالليمون",
+          "pr": 2000,
+          "p": 2000
+        },
+        {
+          "n": "قهوة تركية",
+          "pr": 2000,
+          "p": 2000
+        },
+        {
+          "n": "قهوة عثمانية",
+          "pr": 2000,
+          "p": 2000
+        },
+        {
+          "n": "اسبريسو",
+          "pr": 2000,
+          "p": 2000
+        },
+        {
+          "n": "شاي كرك",
+          "pr": 3000,
+          "p": 3000
+        },
+        {
+          "n": "قهوة فرنسية",
+          "pr": 3000,
+          "p": 3000
+        },
+        {
+          "n": "اسبريسو دبل",
+          "pr": 3000,
+          "p": 3000
+        },
+        {
+          "n": "هوت شوكليت",
+          "pr": 3000,
+          "p": 3000
+        },
+        {
+          "n": "نسكافيه",
+          "pr": 3000,
+          "p": 3000
+        },
+        {
+          "n": "كابتشينو",
+          "pr": 3000,
+          "p": 3000
+        },
+        {
+          "n": "اسبريسو ماكياتو",
+          "pr": 3000,
+          "p": 3000
+        },
+        {
+          "n": "لاتيه",
+          "pr": 3000,
+          "p": 3000
+        },
+        {
+          "n": "لاتيه كارميل",
+          "pr": 4000,
+          "p": 4000
+        },
+        {
+          "n": "لاتيه فانيلا",
+          "pr": 4000,
+          "p": 4000
+        },
+        {
+          "n": "لاتيه بندق",
+          "pr": 4000,
+          "p": 4000
+        },
+        {
+          "n": "موكا",
+          "pr": 4000,
+          "p": 4000
+        },
+        {
+          "n": "امريكانو بلاك",
+          "pr": 4000,
+          "p": 4000
+        },
+        {
+          "n": "فلات وايت",
+          "pr": 4000,
+          "p": 4000
+        },
+        {
+          "n": "سبانش لاتيه",
+          "pr": 4000,
+          "p": 4000
+        }
+      ],
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_085",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_16",
+      "n": "موهيتو من اختيارك",
+      "pr": 3000,
+      "img": "/uploads/hmo/item_085.jpg",
+      "choices": [
+        {
+          "n": "اناناس"
+        },
+        {
+          "n": "خوخ"
+        },
+        {
+          "n": "مانجو"
+        },
+        {
+          "n": "فراولة"
+        },
+        {
+          "n": "بلو سكاي"
+        },
+        {
+          "n": "توت احمر"
+        },
+        {
+          "n": "توت ازرق"
+        },
+        {
+          "n": "ليمون"
+        },
+        {
+          "n": "نعناع"
+        },
+        {
+          "n": "باشن فروت"
+        },
+        {
+          "n": "رمان"
+        },
+        {
+          "n": "غراندين"
+        },
+        {
+          "n": "طاقة"
+        }
+      ],
+      "maxChoices": 1,
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_086",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_17",
+      "n": "ميلك شيك من اختيارك",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_086.jpg",
+      "sizes": [
+        {
+          "n": "ميلك شيك نوتيلا",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "ميلك شيك اوريو",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "ميلك شيك لوتس",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "ميلك شيك مكسرات",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "ميلك شيك بستاشيو",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "ميلك شيك مكس",
+          "pr": 6000,
+          "p": 6000
+        }
+      ],
+      "choices": [
+        {
+          "n": "كراميل"
+        },
+        {
+          "n": "اوريو"
+        },
+        {
+          "n": "كيت كات"
+        },
+        {
+          "n": "فراولة"
+        },
+        {
+          "n": "لوتس"
+        },
+        {
+          "n": "بستاشيو"
+        },
+        {
+          "n": "نوتيلا"
+        }
+      ],
+      "maxChoices": 1,
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_087",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_18",
+      "n": "كريب من اختيارك",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_087.jpg",
+      "sizes": [
+        {
+          "n": "كريب نوتيلا",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "كريب لوتس",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "باستا كريب نوتيلا",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "كريب اوريو",
+          "pr": 5500,
+          "p": 5500
+        },
+        {
+          "n": "باستا كريب اوريو",
+          "pr": 5500,
+          "p": 5500
+        },
+        {
+          "n": "باستا كريب لوتس",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "كريب مكسرات",
+          "pr": 6500,
+          "p": 6500
+        },
+        {
+          "n": "باستا كريب مكسرات",
+          "pr": 6500,
+          "p": 6500
+        },
+        {
+          "n": "كريب بستاشيو",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "كريب مكس حمو",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "باستا كريب بستاشيو",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "باستا كريب مكس حمو",
+          "pr": 7000,
+          "p": 7000
+        }
+      ],
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_088",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_18",
+      "n": "وافل من اختيارك",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_088.jpg",
+      "sizes": [
+        {
+          "n": "وافل نوتيلا",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "وافل اوريو",
+          "pr": 5500,
+          "p": 5500
+        },
+        {
+          "n": "وافل لوتس",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "وافل مكسرات",
+          "pr": 6500,
+          "p": 6500
+        },
+        {
+          "n": "وافل بستاشيو",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "وافل مكس حمو",
+          "pr": 7000,
+          "p": 7000
+        }
+      ],
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_089",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_18",
+      "n": "بان كيك من اختيارك",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_089.jpg",
+      "sizes": [
+        {
+          "n": "بان كيك نوتيلا",
+          "pr": 5000,
+          "p": 5000
+        },
+        {
+          "n": "بان كيك اوريو",
+          "pr": 5500,
+          "p": 5500
+        },
+        {
+          "n": "بان كيك لوتس",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "بان كيك مكسرات",
+          "pr": 6500,
+          "p": 6500
+        },
+        {
+          "n": "بان كيك بستاشيو",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "بان كيك مكس حمو",
+          "pr": 7000,
+          "p": 7000
+        }
+      ],
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_090",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_18",
+      "n": "ميني بان كيك من اختيارك",
+      "d": "15 قطعة",
+      "pr": 6000,
+      "img": "/uploads/hmo/item_090.jpg",
+      "sizes": [
+        {
+          "n": "ميني بان كيك نوتيلا",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "ميني بان كيك اوريو",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "ميني بان كيك لوتس",
+          "pr": 6000,
+          "p": 6000
+        },
+        {
+          "n": "ميني بان كيك فواكه",
+          "pr": 6500,
+          "p": 6500
+        },
+        {
+          "n": "ميني بان كيك مكسرات",
+          "pr": 6500,
+          "p": 6500
+        },
+        {
+          "n": "ميني بان كيك بستاشيو",
+          "pr": 7000,
+          "p": 7000
+        },
+        {
+          "n": "ميني بان كيك مكس حمو",
+          "pr": 7000,
+          "p": 7000
+        }
+      ],
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_091",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_18",
+      "n": "بوكس حمو سويت",
+      "d": "قطعة وافل وبان كيك مع كريب تكفي 3 اشخاص",
+      "pr": 10000,
+      "img": "/uploads/hmo/item_091.jpeg",
+      "prepTime": "35 دقيقة",
+      "o": 5,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_092",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "إنكليزي",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_092.webp",
+      "o": 1,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_093",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "نعناع",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_093.webp",
+      "o": 2,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_094",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "علك ونعناع",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_094.webp",
+      "o": 3,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_095",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "ليمون ونعناع",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_095.webp",
+      "o": 4,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_096",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "باونتي",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_096.webp",
+      "o": 5,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_097",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "تفاحتين",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_097.webp",
+      "o": 6,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_098",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "عنب",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_098.webp",
+      "o": 7,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_099",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "عنب ونعناع",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_099.webp",
+      "o": 8,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_100",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "حمضيات",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_100.webp",
+      "o": 9,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_101",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "علك وفواكه",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_101.webp",
+      "o": 10,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_102",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "آيس كريم",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_102.webp",
+      "o": 11,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_103",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "فراولة ونعناع",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_103.webp",
+      "o": 12,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_104",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "أمسيات موسكو",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_104.webp",
+      "o": 13,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_105",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "هوى بغداد",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_105.webp",
+      "o": 14,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_106",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "شمام",
+      "pr": 5000,
+      "img": "/uploads/hmo/item_106.webp",
+      "o": 15,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_107",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "حمو VIP",
+      "pr": 7000,
+      "img": "/uploads/hmo/item_107.webp",
+      "o": 16,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    },
+    {
+      "id": "itm_hmom_108",
+      "rid": "r_hmo_menux",
+      "cat": "cat_hmom_19",
+      "n": "طبيعي",
+      "pr": 12000,
+      "img": "/uploads/hmo/item_108.webp",
+      "o": 17,
+      "published": true,
+      "available": true,
+      "date": "2026-11-14"
+    }
+  ]
+}

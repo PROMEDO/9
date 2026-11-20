@@ -1,0 +1,8 @@
+{
+  "name": "منيو بلس | Menu+",
+  "description": "منيو بلس (Menu+) – المنيو والكتالوج الإلكتروني الذكي لمطعمك ومتجرك برمز QR والطلبات المباشرة على الواتساب.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
