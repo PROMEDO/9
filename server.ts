@@ -6,10 +6,10 @@
 import 'dotenv/config';
 import crypto from 'node:crypto';
 import express, { type NextFunction, type Request, type Response } from 'express';
+import compression from 'compression';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import zlib from 'node:zlib';
 import {
   applyChanges,
   getInternalStoreItem,
@@ -103,121 +103,7 @@ app.use((req, _res, next) => {
 });
 app.use(express.json({ limit: '15mb' }));
 app.use(express.urlencoded({ extended: true, limit: '15mb' }));
-
-// Lightweight native gzip compression for JSON, HTML, JS, CSS, and SVG responses
-const COMPRESSIBLE_CONTENT_TYPE_RE =
-  /^(text\/|application\/(?:json|javascript|ecmascript|xml|manifest\+json)|image\/svg\+xml)/i;
-
-app.use((req, res, next) => {
-  if (req.method === 'HEAD') return next();
-  const acceptEncoding = String(req.headers['accept-encoding'] || '');
-  if (!/\bgzip\b/i.test(acceptEncoding)) return next();
-
-  const origWrite = res.write.bind(res);
-  const origEnd = res.end.bind(res);
-  let decided = false;
-  let gzipStream: zlib.Gzip | null = null;
-
-  const canCompressResponse = (): boolean => {
-    if (res.statusCode < 200 || res.statusCode === 204 || res.statusCode === 304) return false;
-    if (res.getHeader('Content-Encoding')) return false;
-    const cacheControl = String(res.getHeader('Cache-Control') || '');
-    if (cacheControl.includes('no-transform')) return false;
-    const ct = String(res.getHeader('Content-Type') || '');
-    return COMPRESSIBLE_CONTENT_TYPE_RE.test(ct);
-  };
-
-  const enableGzipHeaders = () => {
-    res.removeHeader('Content-Length');
-    res.setHeader('Content-Encoding', 'gzip');
-    const prevVary = String(res.getHeader('Vary') || '');
-    if (!/\baccept-encoding\b/i.test(prevVary)) {
-      res.setHeader('Vary', prevVary ? `${prevVary}, Accept-Encoding` : 'Accept-Encoding');
-    }
-  };
-
-  const toBuffer = (chunk: any, encoding?: BufferEncoding): Buffer => {
-    if (Buffer.isBuffer(chunk)) return chunk;
-    if (typeof chunk === 'string') return Buffer.from(chunk, encoding || 'utf8');
-    if (chunk instanceof Uint8Array) return Buffer.from(chunk);
-    return Buffer.from(String(chunk), encoding || 'utf8');
-  };
-
-  res.write = function (chunk: any, encodingOrCb?: any, cb?: any): boolean {
-    const encoding = typeof encodingOrCb === 'string' ? (encodingOrCb as BufferEncoding) : undefined;
-    const callback = typeof encodingOrCb === 'function' ? encodingOrCb : cb;
-
-    if (!decided) {
-      decided = true;
-      if (canCompressResponse()) {
-        enableGzipHeaders();
-        gzipStream = zlib.createGzip({ level: 6 });
-        gzipStream.on('data', (compressedChunk: Buffer) => {
-          origWrite(compressedChunk);
-        });
-        gzipStream.on('error', () => {
-          gzipStream = null;
-        });
-      }
-    }
-
-    if (gzipStream) {
-      return gzipStream.write(chunk, encoding as any, callback);
-    }
-    return origWrite(chunk, encodingOrCb, cb);
-  } as typeof res.write;
-
-  res.end = function (chunkOrCb?: any, encodingOrCb?: any, cb?: any): Response {
-    const hasChunk = chunkOrCb !== undefined && chunkOrCb !== null && typeof chunkOrCb !== 'function';
-    const encoding = typeof encodingOrCb === 'string' ? (encodingOrCb as BufferEncoding) : undefined;
-    const callback =
-      typeof chunkOrCb === 'function'
-        ? chunkOrCb
-        : typeof encodingOrCb === 'function'
-        ? encodingOrCb
-        : cb;
-
-    if (!decided) {
-      decided = true;
-      if (hasChunk && canCompressResponse()) {
-        const buf = toBuffer(chunkOrCb, encoding);
-        if (buf.length >= 1024) {
-          enableGzipHeaders();
-          zlib.gzip(buf, { level: 6 }, (err, compressed) => {
-            if (err || !compressed) {
-              origEnd(buf, callback);
-              return;
-            }
-            if (!res.headersSent) {
-              res.setHeader('Content-Length', String(compressed.length));
-            }
-            origEnd(compressed, callback);
-          });
-          return res;
-        }
-      }
-      return origEnd(chunkOrCb, encodingOrCb, cb);
-    }
-
-    if (gzipStream) {
-      const gs = gzipStream;
-      gzipStream = null;
-      gs.once('end', () => {
-        origEnd(callback);
-      });
-      if (hasChunk) {
-        gs.end(chunkOrCb, encoding as any);
-      } else {
-        gs.end();
-      }
-      return res;
-    }
-
-    return origEnd(chunkOrCb, encodingOrCb, cb);
-  } as typeof res.end;
-
-  next();
-});
+app.use(compression({ threshold: 1024 }));
 
 // Baseline HTTP security & wildcard-subdomain CORS headers
 app.use((req, res, next) => {

@@ -39,26 +39,6 @@ export default defineConfig(() => {
       outDir: 'dist',
       emptyOutDir: true,
       sourcemap: false,
-      rollupOptions: {
-        output: {
-          manualChunks(id) {
-            if (!id.includes('node_modules')) return undefined;
-            if (id.includes('/react/') || id.includes('/react-dom/') || id.includes('/scheduler/')) {
-              return 'vendor-react';
-            }
-            if (id.includes('/motion/') || id.includes('/framer-motion/')) {
-              return 'vendor-motion';
-            }
-            if (id.includes('/lucide-react/')) {
-              return 'vendor-icons';
-            }
-            if (id.includes('/@supabase/')) {
-              return 'vendor-supabase';
-            }
-            return undefined;
-          },
-        },
-      },
     },
     server: {
       allowedHosts: true as const,
